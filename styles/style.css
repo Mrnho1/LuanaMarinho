@@ -48,7 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #685a5a;
     padding: 15px 20px;
     color: white;
 }
@@ -56,6 +56,11 @@
 .logo {
     font-size: 24px;
     font-weight: bold;
+}
+
+.logo img{
+    width: 25%;
+    padding-left: 30px;
 }
 
 /* Estiliza os links */
