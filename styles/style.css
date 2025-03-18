@@ -98,6 +98,10 @@
         width: 100%;
         text-align: center;
     }
+    .logo img{
+        width: 50%;
+        padding-left: 30px;
+    }
 
     .nav-links li {
         padding: 15px 0;
