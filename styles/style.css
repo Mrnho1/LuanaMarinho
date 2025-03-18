@@ -48,9 +48,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #685a5a;
+    background-color: #e6dddd;
+    color: #333;
     padding: 15px 20px;
-    color: white;
 }
 
 .logo {
@@ -74,7 +74,7 @@
 }
 
 .nav-links a {
-    color: white;
+    color: #333;
     text-decoration: none;
     font-size: 18px;
 }
@@ -91,15 +91,17 @@
     .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #333;
+        background-color: #e6dddd;
+        color: #333;
         position: absolute;
-        top: 60px;
+        top: 90px;
         left: 0;
         width: 100%;
         text-align: center;
+        padding-top: 10px;
     }
     .logo img{
-        width: 50%;
+        width: 60%;
         padding-left: 30px;
     }
 
