@@ -87,6 +87,44 @@
 }
 
 
+    /* Aqui fica o Estilo da Main */
+    .hero {
+      background-image: url('/assets/img/LOgo\ -\ Luana\ da\ Silva\ Marinho.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh; /* Ocupa toda a tela */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+  }
+  
+  .hero-content {
+      background: rgba(0, 0, 0, 0.5); /* Efeito de transparência */
+      padding: 20px;
+      border-radius: 10px;
+  }
+  
+  .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #92a3a5;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+  }
+  
+  .btn:hover {
+      background: #f0b727e2;
+  }
+
+
+
 footer {
   background-color: #222;
   color: white;
@@ -181,6 +219,9 @@ footer {
     }
 
 
+
+
+    /* Aqui fica o Estilo do Footer */
     .footer-container {
       flex-direction: column;
       align-items: center;
