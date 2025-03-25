@@ -89,7 +89,7 @@
 
     /* Aqui fica o Estilo da Main */
     .hero {
-      background-image: url('/assets/img/LOgo\ -\ Luana\ da\ Silva\ Marinho.jpg');
+      background-image: url('../assets/img/LOgo\ -\ Luana\ da\ Silva\ Marinho.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
