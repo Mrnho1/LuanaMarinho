@@ -1,130 +1,150 @@
 /* Reset CSS básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    background-color: #f8f9fa;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  ul, ol {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  button, input, textarea {
-    font-family: inherit;
-    border: none;
-    outline: none;
-  }
-  
-  button {
-    cursor: pointer;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Definindo variáveis globais */
+:root {
+  --cor-principal: #F5DB7E;
+  --cor-secundaria: #070707;
+  --cor-ternaria: #EEE8E0;
+}
 
 
-  /* Estiliza a navbar */
+
+/* Estiliza a navbar */
+
+header {
+  background-color: var(--cor-ternaria);
+}
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #e6dddd;
-    color: #333;
-    padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1290px;
+  width: 100%;
+  margin: 0 auto;
+  color: #333;
+  padding: 15px 20px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.logo img{
-    width: 25%;
-    padding-left: 30px;
+.logo img {
+  width: 20%;
+  padding-left: 30px;
 }
 
 /* Estiliza os links */
 .nav-links {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
 
 .nav-links li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .nav-links a {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 /* Ícone do menu hamburguer */
 .menu-toggle {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 
-    /* Aqui fica o Estilo da Main */
-    .hero {
-      background-image: url('../assets/img/LOgo\ -\ Luana\ da\ Silva\ Marinho.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 100vh; /* Ocupa toda a tela */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
-  }
-  
-  .hero-content {
-      background: rgba(0, 0, 0, 0.5); /* Efeito de transparência */
-      padding: 20px;
-      border-radius: 10px;
-  }
-  
-  .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #92a3a5;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
-  }
-  
-  .btn:hover {
-      background: #f0b727e2;
-  }
+/* Estiliza o Main */
+.hero {
+  background-image: url('../assets/img/LOgo\ -\ Luana\ da\ Silva\ Marinho.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /* Ocupa toda a tela */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  /* Efeito de transparência */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #92a3a5;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #f0b727e2;
+}
 
 
-
+/* Estiliza o Footer */
 footer {
   background-color: #222;
   color: white;
@@ -189,46 +209,47 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: #e6dddd;
-        color: #333;
-        position: absolute;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        padding-top: 10px;
-    }
-    .logo img{
-        width: 60%;
-        padding-left: 30px;
-    }
-
-    .nav-links li {
-        padding: 15px 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-active {
-        display: flex;
-    }
-
-
-
-
-    /* Aqui fica o Estilo do Footer */
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #e6dddd;
+    color: #333;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
   }
-  
+
+  .logo img {
+    width: 60%;
+    padding-left: 30px;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-active {
+    display: flex;
+  }
+
+
+
+
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .footer-section {
-      text-align: center;
-      width: 100%;
+    text-align: center;
+    width: 100%;
   }
 }
