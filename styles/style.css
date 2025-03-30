@@ -1,3 +1,6 @@
+/* Importações */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
 /* Reset CSS básico */
 * {
   margin: 0;
@@ -47,9 +50,14 @@ button {
 
 /* Definindo variáveis globais */
 :root {
+  /* Cores */
   --cor-principal: #F5DB7E;
   --cor-secundaria: #070707;
   --cor-ternaria: #EEE8E0;
+  /* Tipografia */
+  --font-principal: 'Open Sans', sans-serif;
+  --font-secundaria: 'Cinzel', serif;
+  /* Espaçamento */
 }
 
 
@@ -106,41 +114,55 @@ header {
 
 
 /* Estiliza o Main */
-.hero {
+.s1 {
+  background-color: var(--cor-ternaria);
+}
+
+.s1-div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.s1-info {
+  margin: 20px 0px;
+  
+}
+
+.s1-info h1 {
+  font-family: var(--font-secundaria);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 16px;
+}
+.s1-info p{
+  font-style: var(--font-principal);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+.s1-btn{
+  background-color: var(--cor-principal);
+  font-weight: 600;
+  font-size: 16px;
+  font-family: var(--font-secundaria);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.s1-img {
   background-image: url('../assets/img/LOgo\ -\ Luana\ da\ Silva\ Marinho.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
-  /* Ocupa toda a tela */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-.hero-content {
-  background: rgba(0, 0, 0, 0.5);
-  /* Efeito de transparência */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #92a3a5;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #f0b727e2;
+  width: 50%;
+  height: 40vh;
+  margin: 20px 0px;
 }
 
 
