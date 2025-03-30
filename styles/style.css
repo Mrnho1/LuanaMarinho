@@ -146,13 +146,37 @@ header {
   max-width: 600px;
   margin-bottom: 24px;
 }
-.s1-btn{
+/* .s1-btn{
   background-color: var(--cor-principal);
   font-weight: 600;
   font-size: 16px;
   font-family: var(--font-secundaria);
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
+
+
+}
+.s1-btn:hover{
+  transform: translateY(-5px);
+} */
+
+.s1-btn{
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  background-color: #CA9728; /* Cor inicial */
+  transition: background-position 0.5s ease-in-out;
+  background-size: 200% auto;
+  background-image: linear-gradient(to right, #CA9728, #F4E188, #E7C65D);
+}
+
+.s1-btn:hover{
+  background-position: right center; /* Desliza para a direita */
 }
 
 .s1-img {
