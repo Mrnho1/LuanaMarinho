@@ -127,11 +127,12 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* Permite o ajuste de layout em telas menores */
 }
 
 .s1-info {
   margin: 100px 0px;
-  
+  flex: 1 1 50%; /* Flexível para se ajustar em telas menores */
 }
 
 .s1-info h1 {
@@ -162,7 +163,7 @@ header {
   color: transparent;
 }
 
-.s1-btn{
+.s1-btn {
   display: inline-block;
   padding: 10px 20px;
   font-size: 18px;
@@ -177,7 +178,7 @@ header {
   background-image: var(--gradiente);
 }
 
-.s1-btn:hover{
+.s1-btn:hover {
   background-position: right center; /* Desliza para a direita */
 }
 
@@ -287,8 +288,58 @@ footer {
     display: flex;
   }
 
+  /* Main Estilo */
+  .s1-div {
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos */
+  }
 
+  .s1-info {
+    margin: 50px 0; /* Diminui a margem */
+    text-align: center; /* Centraliza o texto */
+  }
 
+  .s1-info h1 {
+    font-size: 36px; /* Reduz o tamanho do título */
+    margin-bottom: 12px;
+  }
+
+  .s1-info p {
+    font-size: 14px; /* Reduz o tamanho do parágrafo */
+    max-width: 90%; /* Aumenta a largura do parágrafo */
+    margin-bottom: 20px;
+  }
+
+  .s1-img {
+    width: 100%; /* A imagem ocupa toda a largura */
+    height: 30vh; /* Ajusta a altura da imagem */
+    margin: 50px 0; /* Diminui a margem */
+  }
+
+  .s1-btn {
+    font-size: 16px; /* Ajusta o tamanho do botão */
+    padding: 12px 24px; /* Ajusta o tamanho do padding */
+  }
+}
+
+/* Tela extra pequena (menos de 480px) */
+@media (max-width: 480px) {
+  .s1-info h1 {
+    font-size: 28px; /* Tamanho de fonte menor */
+  }
+
+  .s1-info p {
+    font-size: 12px; /* Reduz ainda mais o tamanho do parágrafo */
+  }
+
+  .s1-btn {
+    font-size: 14px; /* Ajusta o tamanho do botão */
+    padding: 10px 20px; /* Ajusta o tamanho do padding */
+  }
+
+  .s1-img {
+    height: 25vh; /* Ajusta a altura da imagem */
+  }
 
 
   .footer-container {
