@@ -134,7 +134,7 @@ header {
   background-color: var(--cor-inicial); /* Cor da linha */
   bottom: 0;
   left: 0;
-  transition: width 0.3s ease; /* Transição suave */
+  transition: width 0.5s ease; /* Transição suave */
 }
 
 /* Quando hover, a linha expande */
