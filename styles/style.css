@@ -86,6 +86,7 @@ header {
   max-width: 1290px;
   width: 100%;
   margin: 0 auto;
+  margin-top: 20px;
   color: #333;
   padding: 15px 20px;
 }
@@ -111,9 +112,34 @@ header {
 }
 
 .nav-links a {
-  color: #333;
+  color: #000; /* Cor inicial */
   text-decoration: none;
   font-size: 18px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+/* Efeito de hover */
+.nav-links a:hover {
+  color: var(--cor-inicial); /* Cor ao passar o mouse */
+}
+
+/* Linha deslizante simples */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--cor-inicial); /* Cor da linha */
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease; /* Transição suave */
+}
+
+/* Quando hover, a linha expande */
+.nav-links a:hover::after {
+  width: 100%; /* A linha cresce até a largura total do link */
 }
 
 /* Ícone do menu hamburguer */
