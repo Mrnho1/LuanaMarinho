@@ -64,15 +64,21 @@ button {
   --cor-inicial: #CA9728;
 }
 
-
-
 /* Estiliza a navbar */
-
 header {
-  background-color: var(--cor-ternaria);
+  background-color: var(--cor-secundaria);
 }
 
 .navbar {
+  background-color: var(--cor-ternaria);
+  border-radius: 64px;
+  position: fixed; /* Fixa a navbar no topo */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para o efeito de flutuação */
+  transition: box-shadow 0.3s ease-in-out; /* Transição suave da sombra */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -116,7 +122,6 @@ header {
   cursor: pointer;
 }
 
-
 /* Estiliza o Main */
 .s1 {
   background-color: var(--cor-secundaria);
@@ -131,7 +136,7 @@ header {
 }
 
 .s1-info {
-  margin: 100px 0px;
+  margin: 200px 0px;
   flex: 1 1 50%; /* Flexível para se ajustar em telas menores */
 }
 
@@ -189,9 +194,8 @@ header {
   background-repeat: no-repeat;
   width: 50%;
   height: 40vh;
-  margin: 100px 0px;
+  margin: 200px 0px;
 }
-
 
 /* Estiliza o Footer */
 footer {
@@ -258,17 +262,26 @@ footer {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+  .navbar{
+    width: 90%;
+    margin-top: 10px;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
     background-color: #e6dddd;
     color: #333;
     position: absolute;
-    top: 90px;
+    top: 100px;
     left: 0;
     width: 100%;
     text-align: center;
-    padding-top: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    transform: translateX(100%); /* Inicialmente fora da tela à direita */
+    transition: transform 0.3s ease-in-out; /* Transição suave */
   }
 
   .logo img {
@@ -286,6 +299,7 @@ footer {
 
   .nav-active {
     display: flex;
+    transform: translateX(0); /* Move o menu para a tela */
   }
 
   /* Main Estilo */
@@ -295,7 +309,7 @@ footer {
   }
 
   .s1-info {
-    margin: 50px 0; /* Diminui a margem */
+    margin: 200px 0px 20px; /* Diminui a margem */
     text-align: center; /* Centraliza o texto */
   }
 
@@ -340,7 +354,6 @@ footer {
   .s1-img {
     height: 25vh; /* Ajusta a altura da imagem */
   }
-
 
   .footer-container {
     flex-direction: column;
