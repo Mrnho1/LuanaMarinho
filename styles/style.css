@@ -150,6 +150,7 @@ header {
 }
 
 /* Estiliza o Main */
+/* Estiliza a section 1 */
 .s1 {
   background-color: var(--cor-secundaria);
 }
@@ -223,6 +224,76 @@ header {
   height: 40vh;
   margin: 200px 0px;
 }
+
+/* Estiliza o section 2 */
+.s2{
+  background-color: var(--cor-secundaria);
+  color: var(--cor-ternaria);
+  padding: 24px 0px;
+}
+
+.s2-div{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.s2-title{
+  font-family: var(--font-principal);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 24px;
+  background: var(--gradiente); /* Usa o gradiente */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.s2-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.s2-card {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--cor-inicial); /* Cor inicial */
+  transition: background-position 0.5s ease-in-out;
+  background-size: 200% auto;
+  background-image: var(--gradiente);
+}
+
+.s2-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1e2a38;
+}
+
+.s2-card p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.icon-area {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.icon-area img {
+  width: 40px;
+  height: 40px;
+}
+
 
 /* Estiliza o Footer */
 footer {
