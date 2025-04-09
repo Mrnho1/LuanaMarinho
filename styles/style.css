@@ -381,6 +381,36 @@ footer {
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+  .s2-cards {
+    padding: 30px 16px;
+    gap: 20px;
+  }
+
+  .s2-title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 auto 24px;
+  }
+
+  .s2-card h3 {
+    font-size: 1.3rem;
+    padding: 8px 16px;
+  }
+
+  .s2-card p {
+    font-size: 1rem;
+  }
+
+  .icon-area img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+
+
 @media (max-width: 768px) {
 
   .navbar {
@@ -470,6 +500,31 @@ footer {
     padding: 12px 24px;
     /* Ajusta o tamanho do padding */
   }
+
+  .s2-cards {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+  }
+
+  .s2-card {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .s2-title {
+    font-size: 1.1rem;
+    padding: 0 12px;
+  }
+
+  .s2-card h3 {
+    font-size: 1.2rem;
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+
+  .s2-card p {
+    font-size: 1rem;
+  }
 }
 
 /* Tela extra pequena (menos de 480px) */
@@ -494,6 +549,18 @@ footer {
   .s1-img {
     height: 25vh;
     /* Ajusta a altura da imagem */
+  }
+  .s2-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .s2-card p {
+    font-size: 0.95rem;
+  }
+
+  .icon-area img {
+    width: 32px;
+    height: 32px;
   }
 
   .footer-container {
