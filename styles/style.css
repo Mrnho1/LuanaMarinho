@@ -242,7 +242,7 @@ header {
 }
 
 /* Estiliza o section 2 */
-.penal{
+.penal {
   background-color: var(--cor-secundaria);
 }
 
@@ -262,7 +262,8 @@ header {
 
 .penal-image img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Mantém a imagem quadrada */
+  aspect-ratio: 1 / 1;
+  /* Mantém a imagem quadrada */
   border-radius: 50%;
   object-fit: cover;
 }
@@ -296,7 +297,7 @@ header {
   background-color: white;
   padding: 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
 }
 
@@ -319,7 +320,7 @@ header {
 .colaboradores-faixa-container {
   text-align: center;
   padding: 3rem 0rem;
-  background-color: var(--cor-ternaria);
+  background-color: white;
 }
 
 .colaboradores-titulo {
@@ -337,14 +338,14 @@ header {
   justify-content: space-around;
 }
 
-.colaboradores-card{
+.colaboradores-card {
   padding: 40px 60px;
   border: #000 solid 2px;
   border-radius: 8px;
   transition: transform 0.4s;
 }
 
-.colaboradores-card:hover{
+.colaboradores-card:hover {
   transform: translateY(-5px);
 }
 
@@ -524,18 +525,19 @@ footer {
   }
 
   /* Ajusta a colab section */
-    .colaboradores-titulo {
+
+  .colaboradores-titulo {
     font-size: 1.2rem;
     font-family: var(--font-secundaria);
     color: var(--cor-secundaria);
     margin-bottom: 1rem;
   }
-  
+
   .colaboradores-faixa {
     display: block;
   }
-  
-  .colaboradores-card{
+
+  .colaboradores-card {
     max-width: 300px;
     margin: auto;
     padding: 4px 6px;
@@ -544,8 +546,8 @@ footer {
     margin-bottom: 5px;
 
   }
-  
-  
+
+
   .colaborador-item img {
     width: 25%;
     /* height: 48px; */
@@ -586,6 +588,7 @@ footer {
     text-align: center;
     width: 100%;
   }
+
   /* Ajusta a colab section */
   .colaboradores-titulo {
     font-size: 1.2rem;
@@ -593,18 +596,18 @@ footer {
     color: var(--cor-secundaria);
     margin-bottom: 1rem;
   }
-  
+
   .colaboradores-faixa {
     display: block;
   }
-  
-  .colaboradores-card{
+
+  .colaboradores-card {
     padding: 4px 6px;
     border: #000 solid 2px;
     border-radius: 8px;
   }
-  
-  
+
+
   .colaborador-item img {
     width: 25%;
     /* height: 48px; */
