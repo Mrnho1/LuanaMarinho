@@ -522,6 +522,35 @@ footer {
     padding: 12px 24px;
     /* Ajusta o tamanho do padding */
   }
+
+  /* Ajusta a colab section */
+    .colaboradores-titulo {
+    font-size: 1.2rem;
+    font-family: var(--font-secundaria);
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+  }
+  
+  .colaboradores-faixa {
+    display: block;
+  }
+  
+  .colaboradores-card{
+    max-width: 300px;
+    margin: auto;
+    padding: 4px 6px;
+    border: #000 solid 2px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+
+  }
+  
+  
+  .colaborador-item img {
+    width: 25%;
+    /* height: 48px; */
+  }
+
 }
 
 /* Tela extra pequena (menos de 480px) */
@@ -556,5 +585,28 @@ footer {
   .footer-section {
     text-align: center;
     width: 100%;
+  }
+  /* Ajusta a colab section */
+  .colaboradores-titulo {
+    font-size: 1.2rem;
+    font-family: var(--font-secundaria);
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+  }
+  
+  .colaboradores-faixa {
+    display: block;
+  }
+  
+  .colaboradores-card{
+    padding: 4px 6px;
+    border: #000 solid 2px;
+    border-radius: 8px;
+  }
+  
+  
+  .colaborador-item img {
+    width: 25%;
+    /* height: 48px; */
   }
 }
