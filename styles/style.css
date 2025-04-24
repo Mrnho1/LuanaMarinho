@@ -320,7 +320,7 @@ header {
 .colaboradores-faixa-container {
   text-align: center;
   padding: 3rem 0rem;
-  background-color: white;
+  background-color: var();
 }
 
 .colaboradores-titulo {
@@ -366,6 +366,66 @@ header {
   object-fit: contain;
 }
 
+/* Estiliza o sobre */
+.sobre{
+  padding: 4rem 2rem;
+  background-color: var(--cor-secundaria);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sobre .content-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sobre .text-sobre {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+.sobre .text-sobre h2 {
+  font-family: var(--font-secundaria);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  background: var(--gradiente);
+  /* Usa o gradiente */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sobre .text-sobre p {
+  font-size: 1.1rem;
+  color: var(--cor-ternaria);
+  font-family: var(--font-principal);
+  line-height: 1.6;
+}
+
+.sobre .img-sobre {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.sobre .img-sobre img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Estiliza botão de contato */
+.contact{
+  background-color: var(--cor-secundaria);
+  display: flex;
+  justify-content: center; /* Alinha horizontalmente */
+  align-items: center;     /* Alinha verticalmente */
+}
 
 
 /* Estiliza o Footer */
