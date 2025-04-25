@@ -419,11 +419,24 @@ header {
 }
 
 /* Estiliza botão de contato */
-.contact{
-  background-color: var(--cor-secundaria);
+.contact {
   display: flex;
-  justify-content: center; /* Alinha horizontalmente */
-  align-items: center;     /* Alinha verticalmente */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-ternaria);
+  font-family: var(--font-principal);
+}
+.contact-content{
+  border: var(--cor-inicial) solid 2px;
+  padding: 40px;
+}
+.contact-text {
+  margin-bottom: 1rem;
+  max-width: 700px;
 }
 
 
