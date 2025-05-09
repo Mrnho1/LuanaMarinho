@@ -55,6 +55,7 @@ button {
   --cor-principal: #F5DB7E;
   --cor-secundaria: #070707;
   --cor-ternaria: #EEE8E0;
+  --preto-secundario: #222;
   /* Tipografia */
   --font-principal: 'Open Sans', sans-serif;
   --font-secundaria: 'Cinzel', serif;
@@ -154,6 +155,7 @@ header {
 }
 
 /* ------------------ MENU TOGGLE ------------------ */
+
 .menu-toggle {
   display: flex;
   flex-direction: column;
@@ -196,8 +198,8 @@ header {
 }
 
 
-/* Estiliza o Main */
-/* Estiliza a section 1 */
+/* ------------------ MAIN ------------------ */
+/* ------------------ SECTION 1 ------------------ */
 .s1 {
   background-color: var(--cor-secundaria);
 }
@@ -212,14 +214,14 @@ header {
 }
 
 .s1-info {
-  margin: 200px 0px;
+  margin: 200px 0px 0px;
   flex: 1 1 50%;
   /* Flexível para se ajustar em telas menores */
 }
 
 .s1-info h1 {
   font-family: var(--font-secundaria);
-  font-size: 48px;
+  font-size: 3.2rem;
   font-weight: 700;
   line-height: 1.2;
   max-width: 600px;
@@ -233,7 +235,7 @@ header {
 
 .s1-info p {
   font-family: var(--font-principal);
-  font-size: 16px;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.2;
   max-width: 600px;
@@ -278,80 +280,73 @@ header {
   margin: 200px 0px;
 }
 
-/* Estiliza o section 2 */
-.penal {
-  background-color: var(--cor-secundaria);
+/* ------------------ SECTION 2 ------------------ */
+
+.sobre-bg {
+  background-color: var(--cor-secundaria); /* Sua cor de fundo */
+  padding: 4rem 1rem;
 }
 
-.penal-section {
+.sobre-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
-  gap: 2rem;
-  padding: 0rem 2rem 3rem;
+  gap: 3rem;
+  align-items: center;
 }
 
-.penal-image {
-  flex: 1 1 40%;
-}
-
-.penal-image img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  /* Mantém a imagem quadrada */
+.sobre-imagem img {
+  width: 400px;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Aumentando a suavidade da sombra */
+  transition: transform 0.3s ease;
 }
 
-.penal-content {
-  flex: 1 1 55%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.sobre-imagem img:hover {
+  transform: scale(1.05); /* Efeito hover mais suave */
 }
 
-.penal-content h2 {
+.sobre-texto {
+  flex: 1;
+  color: var(--cor-ternaria);
+  padding: 40px 20px;
+  background-color: var(--cor-secundaria); /* Fundo mais claro para suavizar */
+}
+
+
+
+.sobre-nome {
   font-family: var(--font-secundaria);
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 16px;
   background: var(--gradiente);
-  /* Usa o gradiente */
+  /* Usa a variável do gradiente */
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+
 }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.card {
+.sobre-texto p {
   font-family: var(--font-principal);
-  background-color: white;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 600px;
+  margin-bottom: 16px;
+  background-color: var(--cor-ternaria);
   color: var(--cor-secundaria);
+  padding: 30px 20px;
+  border-radius: 8px;
 }
 
-.card p {
-  font-size: 0.95rem;
-  color: #555;
-}
+
 
 /* Section colaboradores */
 .colaboradores-faixa-container {
@@ -453,6 +448,108 @@ header {
   height: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+/* Avaliações  */
+.google{
+  background-color: var(--cor-secundaria);
+}
+
+.google-reviews {
+  padding: 50px 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1290px;
+  margin: auto;
+  overflow-x: auto;
+  font-family: var(--font-principal);
+}
+
+.google-reviews h3{
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--cor-ternaria);
+  font-family: var(--font-principal);
+  margin-bottom: 8px;
+}
+
+
+.google-link{
+  color: var(--cor-ternaria);
+  padding: 10px;
+  background-color: var(--preto-secundario);
+  margin-bottom: 32px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.google-title{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.google-btn{
+  background: linear-gradient(45deg, #3088FF, #1E60A6);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-size: 200% 200%;
+  transition: background-position 0.4s ease;
+}
+
+.google-btn:hover{
+  background-position: 100% 100%;
+}
+
+.review-list {
+  display: flex;
+  gap: 20px;
+  padding: 0 10px;
+  justify-content: center;
+}
+
+.review {
+  background: var(--preto-secundario);
+  color: var(--cor-ternaria);
+  display: flex;
+  gap: 15px;
+  padding: 20px 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 295px;
+  flex: 0 0 auto;
+}
+
+.review img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.review-content {
+  flex: 1;
+}
+
+.review-content h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.stars {
+  color: #fbbc04;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.review-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
 
 /* Estiliza botão de contato */
 .contact {
