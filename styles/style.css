@@ -163,7 +163,8 @@ header {
   width: 30px;
   height: 20px;
   cursor: pointer;
-  z-index: 1001; /* Garante que fique acima do menu */
+  z-index: 1001;
+  /* Garante que fique acima do menu */
   display: none;
 }
 
@@ -178,15 +179,18 @@ header {
 
 /* Quando o menu estiver ativo, o X aparece */
 .menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 8px); /* Ajuste para o X */
+  transform: rotate(45deg) translate(4px, 8px);
+  /* Ajuste para o X */
 }
 
 .menu-toggle.active span:nth-child(2) {
-  opacity: 0; /* A barra do meio desaparece */
+  opacity: 0;
+  /* A barra do meio desaparece */
 }
 
 .menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -8px); /* Ajuste para o X */
+  transform: rotate(-45deg) translate(4px, -8px);
+  /* Ajuste para o X */
 }
 
 /* Quando o menu não estiver ativo, as barras do hambúrguer são visíveis */
@@ -194,7 +198,8 @@ header {
 .menu-toggle:not(.active) span:nth-child(2),
 .menu-toggle:not(.active) span:nth-child(3) {
   opacity: 1;
-  transform: none; /* Restaura o hambúrguer para as barras normais */
+  transform: none;
+  /* Restaura o hambúrguer para as barras normais */
 }
 
 
@@ -283,7 +288,8 @@ header {
 /* ------------------ SECTION 2 ------------------ */
 
 .sobre-bg {
-  background-color: var(--cor-secundaria); /* Sua cor de fundo */
+  background-color: var(--cor-secundaria);
+  /* Sua cor de fundo */
   padding: 4rem 1rem;
 }
 
@@ -301,21 +307,25 @@ header {
   height: auto;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Aumentando a suavidade da sombra */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Aumentando a suavidade da sombra */
   transition: transform 0.3s ease;
 }
 
 .sobre-imagem img:hover {
-  transform: scale(1.05); /* Efeito hover mais suave */
+  transform: scale(1.05);
+  /* Efeito hover mais suave */
 }
 
 .sobre-texto {
   flex: 1;
   color: var(--cor-ternaria);
   padding: 40px 20px;
-  background-color: var(--cor-secundaria); /* Fundo mais claro para suavizar */
+  background-color: var(--cor-secundaria);
+  /* Fundo mais claro para suavizar */
 }
-.sobre-texto h2{
+
+.sobre-texto h2 {
   text-align: center;
 }
 
@@ -354,7 +364,8 @@ header {
 .colaboradores-faixa-container {
   text-align: center;
   padding: 3rem 1rem;
-  background-color: var(--cor-de-fundo); /* Ajuste conforme sua variável */
+  background-color: var(--cor-de-fundo);
+  /* Ajuste conforme sua variável */
 }
 
 .colaboradores-titulo {
@@ -400,7 +411,7 @@ header {
 }
 
 /* Estiliza o sobre */
-.sobre{
+.sobre {
   padding: 4rem 2rem;
   background-color: var(--cor-secundaria);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -448,8 +459,9 @@ header {
 .sobre .img-sobre img {
   max-width: 100%;
   height: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 /* ------------------  -AVALIAÇÕES----------------- */
 .google {
   background-color: var(--cor-secundaria);
@@ -531,6 +543,14 @@ header {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   width: 300px;
   flex: 0 0 auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  /* Aumentando a suavidade da sombra */
+  transition: transform 0.3s ease;
+}
+
+.review:hover {
+  transform: scale(1.05);
+  /* Efeito hover mais suave */
 }
 
 .review-content {
@@ -574,14 +594,52 @@ header {
   color: var(--cor-ternaria);
   font-family: var(--font-principal);
 }
-.contact-content{
+
+.contact-content {
   border: var(--cor-inicial) solid 2px;
   padding: 40px;
 }
+
 .contact-text {
   margin-bottom: 1rem;
   max-width: 700px;
 }
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-top: 20px;
+}
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 5px 40px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--cor-secundaria);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--cor-inicial);
+  /* Cor inicial */
+  transition: background-position 0.5s ease-in-out;
+  background-size: 200% auto;
+  background-image: var(--gradiente);
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.contact-btn:hover {
+  background-position: right center;
+  /* Desliza para a direita */
+}
+
+.contact-btn img{
+  width: 40px;
+}
+
 
 
 /* Estiliza o Footer */
@@ -671,7 +729,7 @@ footer {
     border-radius: 20px;
   }
 
-  .nav-links li{
+  .nav-links li {
     padding: 8px 0px;
   }
 
@@ -742,7 +800,7 @@ footer {
 
   /* -------------------- AJUSTA AS AVALIAÇÕES------------------- */
 
-.google {
+  .google {
     padding: 20px 10px;
   }
 
@@ -800,6 +858,21 @@ footer {
   }
 
 
+}
+
+@media (min-width: 600px) {
+  .contact-btn span {
+    display: none;
+  }
+
+  .contact-btn {
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .btn-icon {
+    width: 36px;
+  }
 }
 
 /* Tela extra pequena (menos de 480px) */
