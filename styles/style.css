@@ -604,13 +604,7 @@ header {
   margin-bottom: 1rem;
   max-width: 700px;
 }
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  margin-top: 20px;
-}
+
 .contact-btn {
   display: flex;
   align-items: center;
@@ -858,21 +852,6 @@ footer {
   }
 
 
-}
-
-@media (min-width: 600px) {
-  .contact-btn span {
-    display: none;
-  }
-
-  .contact-btn {
-    padding: 10px;
-    justify-content: center;
-  }
-
-  .btn-icon {
-    width: 36px;
-  }
 }
 
 /* Tela extra pequena (menos de 480px) */
