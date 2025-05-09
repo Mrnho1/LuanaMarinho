@@ -315,7 +315,9 @@ header {
   padding: 40px 20px;
   background-color: var(--cor-secundaria); /* Fundo mais claro para suavizar */
 }
-
+.sobre-texto h2{
+  text-align: center;
+}
 
 
 .sobre-nome {
@@ -448,48 +450,54 @@ header {
   height: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
-/* Avaliações  */
-.google{
+/* ------------------  -AVALIAÇÕES----------------- */
+.google {
   background-color: var(--cor-secundaria);
 }
 
 .google-reviews {
-  padding: 50px 20px;
-  font-family: Arial, sans-serif;
+  padding: 50px 0px;
+  font-family: var(--font-principal);
   max-width: 1290px;
   margin: auto;
   overflow-x: auto;
-  font-family: var(--font-principal);
 }
 
-.google-reviews h3{
+.google-reviews h3 {
   text-align: center;
   font-size: 1.5rem;
   color: var(--cor-ternaria);
-  font-family: var(--font-principal);
   margin-bottom: 8px;
 }
 
-
-.google-link{
+.google-link {
   color: var(--cor-ternaria);
-  padding: 10px;
+  padding: 10px 40px;
   background-color: var(--preto-secundario);
   margin-bottom: 32px;
   border-radius: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 40px;
-  padding-right: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.google-title{
+
+.google-title {
   display: flex;
   gap: 0.5rem;
   align-items: center;
   font-size: 1.2rem;
 }
-.google-btn{
+
+.google-stars {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.google-btn {
   background: linear-gradient(45deg, #3088FF, #1E60A6);
   border: none;
   color: white;
@@ -501,7 +509,7 @@ header {
   transition: background-position 0.4s ease;
 }
 
-.google-btn:hover{
+.google-btn:hover {
   background-position: 100% 100%;
 }
 
@@ -510,6 +518,7 @@ header {
   gap: 20px;
   padding: 0 10px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .review {
@@ -519,15 +528,9 @@ header {
   gap: 15px;
   padding: 20px 10px;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  max-width: 295px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 300px;
   flex: 0 0 auto;
-}
-
-.review img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
 }
 
 .review-content {
@@ -543,13 +546,21 @@ header {
   color: #fbbc04;
   font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .review-content p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
+.review-content a {
+  color: blue;
+}
+
+.review-content a:hover {
+  border-bottom: 1px solid blue;
+}
 
 /* Estiliza botão de contato */
 .contact {
@@ -727,6 +738,67 @@ footer {
   .colaboradores-faixa {
     grid-template-columns: repeat(2, 1fr);
   }
+
+
+  /* -------------------- AJUSTA AS AVALIAÇÕES------------------- */
+
+.google {
+    padding: 20px 10px;
+  }
+
+  .google-link {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .google-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .google-stars {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .google-btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  .review-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .review {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .review-content h3 {
+    font-size: 16px;
+  }
+
+  .review-content p {
+    font-size: 15px;
+  }
+
+  .stars {
+    font-size: 22px;
+  }
+
 
 }
 
