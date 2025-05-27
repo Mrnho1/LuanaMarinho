@@ -85,7 +85,7 @@ header {
 }
 
 .navbar {
-  background-color: var(--cor-ternaria) !important; 
+  background-color: var(--cor-ternaria);
   border-radius: 64px;
   position: fixed;
   top: 0;
@@ -384,19 +384,19 @@ header {
   border: #000 solid 2px;
   border-radius: 8px;
   transition: transform 0.4s;
-  
+
 }
 
 .services-card:hover {
   transform: translateY(-5px);
 }
 
-.services-card h3{
+.services-card h3 {
   font-size: 1.25rem;
   font-family: var(--font-secundaria);
 }
 
-.services-card p{
+.services-card p {
   font-size: 1.25rem;
   font-weight: 500;
   font-family: var(--font-principal);
@@ -548,7 +548,6 @@ header {
 
 .review:hover {
   transform: scale(1.05);
-  /* Efeito hover mais suave */
 }
 
 .review-content {
@@ -589,34 +588,37 @@ header {
 }
 
 /* Estiliza botão de contato */
-.contact{
+.contact {
   background-color: var(--cor-secundaria);
   padding-bottom: 20px;
-  
+
 }
 
-.contact-container{
+.contact-container {
   height: 100vh;
   padding-top: 20vh;
 }
 
-.contact-content{
+.contact-content {
   max-width: 1290px;
   margin: auto;
   height: 35vh;
   display: block;
   border: solid 2px var(--cor-inicial);
 }
-.contact-text h2{
+
+.contact-text h2 {
   text-align: center;
   color: var(--cor-ternaria);
   font-size: 2.5rem;
 }
-.contact-text p{
+
+.contact-text p {
   text-align: center;
   color: var(--cor-ternaria);
   font-size: 1.25rem;
 }
+
 .contact-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -651,7 +653,8 @@ header {
   background-position: right center;
   /* Desliza para a direita */
 }
-.contact-btn img{
+
+.contact-btn img {
   width: 40px;
 }
 
@@ -730,6 +733,14 @@ footer {
     padding: 15px 20px;
   }
 
+  .navbar-scrolled {
+    padding: 0px 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -746,6 +757,11 @@ footer {
 
   .nav-links li {
     padding: 8px 0px;
+    
+  }
+  .nav-links li a{
+    font-family: var(--font-principal);
+    font-size: 1.5rem;
   }
 
   .nav-links.nav-active {
@@ -762,6 +778,7 @@ footer {
   }
 
 
+
   /* Main Estilo */
   /* -------------------- AJUSTA A PRIMEIRA SECTION------------------- */
   .s1-div {
@@ -770,7 +787,8 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza verticalmente */
     text-align: center;
   }
 
@@ -805,67 +823,109 @@ footer {
 
   /* -------------------- AJUSTA A SEGUNDA SECTION------------------- */
   .sobre-bg {
-  background-color: var(--cor-secundaria);
-  height: 100vh;
-}
+    background-color: var(--cor-secundaria);
+    height: 100vh;
+  }
 
-.sobre-container {
-  padding-top: 15vh;
-  margin: auto;
-}
-
-
-.sobre-imagem img {
-  width: 85%;
-  height: auto;
-  margin: auto;
-}
-
-.sobre-texto {
-  color: var(--cor-ternaria);
-  background-color: var(--cor-secundaria);
-  padding: 20px;
-}
-
-.sobre-texto h2 {
-  font-size: 2.5rem;
-}
-
-.sobre-texto p {
-  margin-top: 5rem;
-  font-size: 2rem;
-}
+  .sobre-container {
+    padding-top: 15vh;
+    margin: auto;
+  }
 
 
-.sobre-nome {
-  font-family: var(--font-secundaria);
-  font-size: 2.5rem;
-}
- /* -------------------- AJUSTA A TERCEIRA SECTION------------------- */
-.services-faixa-container {
-  height: 300vh;
-  margin-top: 40vh;
-}
+  .sobre-imagem img {
+    width: 85%;
+    height: auto;
+    margin: auto;
+  }
 
-.services-faixa {
-  grid-template-columns: repeat(2, 1fr);
-}
+  .sobre-texto {
+    color: var(--cor-ternaria);
+    background-color: var(--cor-secundaria);
+    padding: 20px;
+  }
 
-.services-card {
-  padding: 2rem;
-  margin: 1rem;
-}
+  .sobre-texto h2 {
+    font-size: 2.5rem;
+  }
 
-.services-card h3{
-  font-size: 1.8rem;
-  padding: 0;
-}
+  .sobre-texto p {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
 
-.services-card p{
-  font-size: 1.5rem;
-  font-weight: 500;
-  font-family: var(--font-principal);
-}
+
+  .sobre-nome {
+    font-family: var(--font-secundaria);
+    font-size: 2.5rem;
+  }
+
+  /* -------------------- AJUSTA A TERCEIRA SECTION------------------- */
+  .services-faixa-container {
+    height: 300vh;
+    margin-top: 40vh;
+  }
+
+  .services-faixa {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .services-card {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .services-card h3 {
+    font-size: 1.8rem;
+    padding: 0;
+  }
+
+  .services-card p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--font-principal);
+  }
+
+  /* -------------------- AJUSTA A SECTION SOBRE ESCRITÓRIO------------------- */
+
+
+  .content-sobre {
+    flex-direction: column;
+  }
+
+  .text-sobre {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .text-sobre h2 {
+    font-family: var(--font-secundaria);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradiente);
+    /* Usa o gradiente */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-sobre p {
+    font-size: 1.25rem;
+    color: var(--cor-ternaria);
+    font-family: var(--font-principal);
+    line-height: 1.6;
+  }
+
+  .img-sobre {
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .img-sobre img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
 
 
