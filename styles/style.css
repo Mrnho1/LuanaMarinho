@@ -85,7 +85,7 @@ header {
 }
 
 .navbar {
-  background-color: var(--cor-ternaria);
+  background-color: var(--cor-ternaria) !important; 
   border-radius: 64px;
   position: fixed;
   top: 0;
