@@ -286,6 +286,7 @@ header {
   margin: auto;
 }
 
+
 /* ------------------ SECTION 2 ------------------ */
 
 .sobre-bg {
@@ -310,11 +311,6 @@ header {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   /* Aumentando a suavidade da sombra */
   transition: transform 0.3s ease;
-}
-
-.sobre-imagem img:hover {
-  transform: scale(1.05);
-  /* Efeito hover mais suave */
 }
 
 .sobre-texto {
@@ -767,15 +763,15 @@ footer {
 
 
   /* Main Estilo */
+  /* -------------------- AJUSTA A PRIMEIRA SECTION------------------- */
   .s1-div {
-    height: 150vh;
+    height: 100vh;
     padding-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; /* Centraliza verticalmente */
     text-align: center;
-    
   }
 
   .s1-info {
@@ -784,14 +780,13 @@ footer {
   }
 
   .s1-info h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .s1-info p {
-    font-size: 40px;
     max-width: 90%;
     margin: 0 auto 20px;
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 
 
@@ -804,17 +799,57 @@ footer {
   }
 
   .s1-img {
-    width: 100%;
-    height: 30vh;
-    padding: 30px 0;
+    display: none;
   }
+
+
+  /* -------------------- AJUSTA A SEGUNDA SECTION------------------- */
+  .sobre-bg {
+  background-color: var(--cor-secundaria);
+  height: 200vh;
+}
+
+.sobre-container {
+  padding-top: 15vh;
+  margin: auto;
+}
+
+.sobre-imagem{
+  /* height: 100vh; */
+}
+
+.sobre-imagem img {
+  width: 85%;
+  height: auto;
+  margin: auto;
+}
+
+.sobre-texto {
+  color: var(--cor-ternaria);
+  background-color: var(--cor-secundaria);
+  height: 100vh;
+  padding: 10px;
+}
+
+.sobre-texto h2 {
+  font-size: 3rem;
+}
+
+.sobre-texto p {
+
+  font-size: 2rem;
+}
+
+
+.sobre-nome {
+  font-family: var(--font-secundaria);
+  font-size: 2.5rem;
+}
 
   /* Ajusta a colab section */
   .services-faixa {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  
 
 
   /* -------------------- AJUSTA AS AVALIAÇÕES------------------- */
