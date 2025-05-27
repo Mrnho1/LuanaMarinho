@@ -355,7 +355,7 @@ header {
 
 
 
-/* Section Serviços */
+/* Section Serviços  terceira section*/
 .services-faixa-container {
   height: 100vh;
   text-align: center;
@@ -631,7 +631,7 @@ header {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  flex: 0 1 calc(50% - 20px); /* Cada botão ocupa 50% da largura menos o espaço do gap */
+  flex: 0 1 calc(50% - 20px);
   box-sizing: border-box;
   padding: 10px 20px;
   font-size: 18px;
@@ -806,7 +806,7 @@ footer {
   /* -------------------- AJUSTA A SEGUNDA SECTION------------------- */
   .sobre-bg {
   background-color: var(--cor-secundaria);
-  height: 200vh;
+  height: 100vh;
 }
 
 .sobre-container {
@@ -814,9 +814,6 @@ footer {
   margin: auto;
 }
 
-.sobre-imagem{
-  /* height: 100vh; */
-}
 
 .sobre-imagem img {
   width: 85%;
@@ -827,16 +824,15 @@ footer {
 .sobre-texto {
   color: var(--cor-ternaria);
   background-color: var(--cor-secundaria);
-  height: 100vh;
-  padding: 10px;
+  padding: 20px;
 }
 
 .sobre-texto h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .sobre-texto p {
-
+  margin-top: 5rem;
   font-size: 2rem;
 }
 
@@ -845,11 +841,34 @@ footer {
   font-family: var(--font-secundaria);
   font-size: 2.5rem;
 }
+ /* -------------------- AJUSTA A TERCEIRA SECTION------------------- */
+.services-faixa-container {
+  height: 300vh;
+  margin-top: 40vh;
+}
 
-  /* Ajusta a colab section */
-  .services-faixa {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.services-faixa {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.services-card {
+  padding: 2rem;
+  margin: 1rem;
+}
+
+.services-card h3{
+  font-size: 1.8rem;
+  padding: 0;
+}
+
+.services-card p{
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: var(--font-principal);
+}
+
+
+
 
 
   /* -------------------- AJUSTA AS AVALIAÇÕES------------------- */
