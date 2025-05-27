@@ -897,34 +897,8 @@ footer {
     flex: 1;
     padding: 1rem;
   }
-
-  .text-sobre h2 {
-    font-family: var(--font-secundaria);
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    background: var(--gradiente);
-    /* Usa o gradiente */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
   .text-sobre p {
-    font-size: 1.25rem;
-    color: var(--cor-ternaria);
-    font-family: var(--font-principal);
-    line-height: 1.6;
-  }
-
-  .img-sobre {
-    flex: 1;
-    padding: 1rem;
-  }
-
-  .img-sobre img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
   }
 
 
