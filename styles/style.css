@@ -713,11 +713,6 @@ footer {
 }
 
 
-.social-icons img {
-  width: 32px;
-  height: auto;
-}
-
 .social-icons a:hover {
   color: #00bcd4;
 }
