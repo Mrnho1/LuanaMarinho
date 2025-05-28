@@ -995,7 +995,6 @@ footer {
 
   }
 
-  .contact-container {}
 
   .contact-content {
     height: 80vh;
@@ -1045,6 +1044,10 @@ footer {
   }
   .social-icons{
     justify-content: center;
+  }
+  .social-icons img{
+    width: 32px;
+    height: auto;
   }
   
   /* Ajusta a colab section */
