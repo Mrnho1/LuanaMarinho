@@ -707,11 +707,15 @@ footer {
   color: #00bcd4;
 }
 
-.social-icons a {
-  color: white;
-  margin-right: 10px;
-  font-size: 20px;
-  transition: 0.3s;
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.social-icons img {
+  width: 32px;
+  height: auto;
 }
 
 .social-icons a:hover {
@@ -759,9 +763,10 @@ footer {
 
   .nav-links li {
     padding: 8px 0px;
-    
+
   }
-  .nav-links li a{
+
+  .nav-links li a {
     font-family: var(--font-principal);
     font-size: 1.5rem;
   }
@@ -900,6 +905,7 @@ footer {
     flex: 1;
     padding: 1rem;
   }
+
   .text-sobre p {
     font-size: 1.5rem;
   }
@@ -913,9 +919,10 @@ footer {
   .google {
     padding: 64px 16px;
     padding-bottom: 150vh;
-    
+
   }
-  .google-reviews h3{
+
+  .google-reviews h3 {
     font-size: 3rem;
     padding: 16px 0px;
   }
@@ -956,7 +963,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 24px;
-    
+
   }
 
   .review {
@@ -973,7 +980,7 @@ footer {
     font-size: 1.5rem;
   }
 
-  .review-content a{
+  .review-content a {
     font-size: 1.5rem;
     font-weight: 700;
   }
@@ -982,46 +989,43 @@ footer {
     font-size: 22px;
   }
 
-    /* -------------------- AJUSTA AS FORMAS DE CONTATO------------------- */
-.contact {
-  padding-bottom: 20px;
+  /* -------------------- AJUSTA AS FORMAS DE CONTATO------------------- */
+  .contact {
+    padding-bottom: 20px;
 
-}
+  }
 
-.contact-container {
+  .contact-container {}
 
-  
-}
+  .contact-content {
+    height: 80vh;
+    margin: 0px 16px;
+  }
 
-.contact-content {
-  height: 80vh;
-  margin: 0px 16px;
-}
+  .contact-text p {
+    font-size: 1.5rem;
+    margin: 8px 16px 0px;
+  }
 
-.contact-text p {
-  font-size: 1.5rem;
-  margin: 8px 16px 0px;
-}
+  .contact-buttons {
+    display: block;
+    /* flex-direction: column; */
+    padding: 0px 16px;
+    gap: 20px;
 
-.contact-buttons {
-  display: block;
-  /* flex-direction: column; */
-  padding: 0px 16px;
-  gap: 20px;
-  
-}
+  }
 
-.contact-btn {
-  justify-content: start;
-  margin: 16px 0px;
-}
+  .contact-btn {
+    justify-content: start;
+    margin: 16px 0px;
+  }
 
-.contact-btn:hover {
-  background-position: right center;
-  /* Desliza para a direita */
-}
+  .contact-btn:hover {
+    background-position: right center;
+    /* Desliza para a direita */
+  }
 
-   
+
 
 }
 
@@ -1039,7 +1043,10 @@ footer {
     text-align: center;
     width: 100%;
   }
-
+  .social-icons{
+    justify-content: center;
+  }
+  
   /* Ajusta a colab section */
   .services-faixa {
     grid-template-columns: 1fr;
