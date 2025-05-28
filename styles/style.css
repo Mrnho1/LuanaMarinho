@@ -602,8 +602,10 @@ header {
 .contact-content {
   max-width: 1290px;
   margin: auto;
-  height: 35vh;
-  display: block;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   border: solid 2px var(--cor-inicial);
 }
 
@@ -891,6 +893,7 @@ footer {
 
   .content-sobre {
     flex-direction: column;
+    margin-top: 10vh;
   }
 
   .text-sobre {
@@ -908,7 +911,13 @@ footer {
   /* -------------------- AJUSTA AS AVALIAÇÕES------------------- */
 
   .google {
-    padding: 20px 10px;
+    padding: 64px 16px;
+    padding-bottom: 150vh;
+    
+  }
+  .google-reviews h3{
+    font-size: 3rem;
+    padding: 16px 0px;
   }
 
   .google-link {
@@ -925,18 +934,21 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    font-size: 1.5rem;
   }
 
   .google-stars {
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
+    font-size: 1.25rem;
   }
 
   .google-btn {
     width: 100%;
     max-width: 250px;
-    font-size: 16px;
+    font-size: 1.25rem;
+    font-weight: 700;
     padding: 12px 20px;
   }
 
@@ -944,6 +956,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 24px;
+    
   }
 
   .review {
@@ -953,17 +966,62 @@ footer {
   }
 
   .review-content h3 {
-    font-size: 16px;
+    font-size: 1.5rem;
   }
 
   .review-content p {
-    font-size: 15px;
+    font-size: 1.5rem;
+  }
+
+  .review-content a{
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   .stars {
     font-size: 22px;
   }
 
+    /* -------------------- AJUSTA AS FORMAS DE CONTATO------------------- */
+.contact {
+  padding-bottom: 20px;
+
+}
+
+.contact-container {
+
+  
+}
+
+.contact-content {
+  height: 80vh;
+  margin: 0px 16px;
+}
+
+.contact-text p {
+  font-size: 1.5rem;
+  margin: 8px 16px 0px;
+}
+
+.contact-buttons {
+  display: block;
+  /* flex-direction: column; */
+  padding: 0px 16px;
+  gap: 20px;
+  
+}
+
+.contact-btn {
+  justify-content: start;
+  margin: 16px 0px;
+}
+
+.contact-btn:hover {
+  background-position: right center;
+  /* Desliza para a direita */
+}
+
+   
 
 }
 
