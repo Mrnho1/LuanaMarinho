@@ -824,7 +824,7 @@ footer {
   /* -------------------- AJUSTA A SEGUNDA SECTION------------------- */
   .sobre-bg {
     background-color: var(--cor-secundaria);
-    height: 100vh;
+    height: 250vh;
   }
 
   .sobre-container {
