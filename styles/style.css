@@ -309,7 +309,6 @@ header {
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  /* Aumentando a suavidade da sombra */
   transition: transform 0.3s ease;
 }
 
@@ -317,14 +316,25 @@ header {
   flex: 1;
   color: var(--cor-ternaria);
   background-color: var(--cor-secundaria);
-  /* Fundo mais claro para suavizar */
 }
 
 .sobre-texto h2 {
   text-align: center;
 }
 
-.sobre-texto p {
+.sobre-nome {
+  font-family: var(--font-secundaria);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  background: var(--gradiente);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+}
+.sobre-desc {
   font-family: var(--font-principal);
   font-size: 1.25rem;
   font-weight: 700;
@@ -336,22 +346,10 @@ header {
   padding: 30px 20px;
   border-radius: 8px;
 }
-
-
-.sobre-nome {
+.sobre-desc .oab{
   font-family: var(--font-secundaria);
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 16px;
-  background: var(--gradiente);
-  /* Usa a variável do gradiente */
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
+  border-bottom: #000 solid 2px;
 }
-
 
 
 
