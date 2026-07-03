@@ -41,6 +41,18 @@ button {
   cursor: pointer;
 }
 
+/* Seleção de texto discreta, em tom da marca (evita o azul pesado do
+   navegador sobre o fundo escuro do header) */
+::-moz-selection {
+  background-color: rgba(216, 182, 95, 0.25);
+  color: inherit;
+}
+
+::selection {
+  background-color: rgba(216, 182, 95, 0.25);
+  color: inherit;
+}
+
 /* ===================== TOKENS ===================== */
 :root {
   /* Tinta / escuro */
@@ -251,8 +263,19 @@ header {
   margin-right: auto;
 }
 
-.logo img {
+/* Monograma da marca: o PNG preto é usado como máscara e recebe a cor
+   dourada do sistema, garantindo visibilidade sobre o fundo escuro */
+.logo-mark {
   width: 46px;
+  aspect-ratio: 551 / 427;
+  background-color: var(--gold);
+  -webkit-mask: url("../assets/img/icone-marca.png") no-repeat center / contain;
+  mask: url("../assets/img/icone-marca.png") no-repeat center / contain;
+  transition: background-color 0.3s ease;
+}
+
+.logo:hover .logo-mark {
+  background-color: var(--gold-bright);
 }
 
 .logo-text {
@@ -671,6 +694,16 @@ h2 {
   transform: translateX(6px);
 }
 
+.canal-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  transition: color 0.35s ease;
+}
+
+.contato-canais a:hover .canal-icon {
+  color: var(--gold-bright);
+}
+
 .contato-canais span {
   display: flex;
   flex-direction: column;
@@ -775,7 +808,8 @@ footer {
   flex: 1 1 220px;
 }
 
-.footer-brand img {
+.footer-mark {
+  width: 60px;
   margin-bottom: 1rem;
 }
 

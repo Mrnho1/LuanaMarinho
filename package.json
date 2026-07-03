@@ -1,0 +1,13 @@
+{
+  "name": "luana-marinho-advocacia",
+  "version": "1.0.0",
+  "description": "Landing page — Luana Marinho Advocacia Criminal",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --port=5173 --no-browser",
+    "start": "live-server --port=5173"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
