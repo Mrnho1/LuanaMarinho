@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git mv *)",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1366,2600 --screenshot=/tmp/claude-1000/-home-thiagomoura-Documentos-LD-LuanaMarinho/9667f0e0-cf5e-4617-84d7-9cbd770b3982/scratchpad/render.png --virtual-time-budget=5000 file://__TRACKED_VAR__/index.html)",
+      "Bash(sed 's#</head>#<style>.reveal{opacity:1!important;transform:none!important}</style></head>#' index.html)",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1366,5200 --screenshot=/tmp/claude-1000/-home-thiagomoura-Documentos-LD-LuanaMarinho/9667f0e0-cf5e-4617-84d7-9cbd770b3982/scratchpad/full.png --virtual-time-budget=5000 file://__TRACKED_VAR__/_preview_full.html)"
+    ]
+  }
+}
