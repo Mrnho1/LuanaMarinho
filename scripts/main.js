@@ -59,54 +59,53 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-45% 0px -50% 0px' });
   sections.forEach(s => spy.observe(s));
 
-  /* ---------- Formulário de contato (envio AJAX via Formspree) ---------- */
-  const form = document.querySelector('.contato-form');
-  if (form) {
-    const status = form.querySelector('.form-status');
-    const submitBtn = form.querySelector('.form-submit');
+  /* ---------- Manifesto: efeito máquina de escrever ---------- */
+  const typeEl = document.querySelector('.jm-type');
+  if (typeEl) {
+    const frases = [
+      'Toda pessoa tem direito a uma defesa digna.',
+      'A presunção de inocência é um pilar da justiça.',
+      'Onde há acusação, deve haver defesa técnica.',
+      'O direito ao silêncio também é um direito.',
+      'Defender é garantir que a lei valha para todos.'
+    ];
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+    const caret = document.querySelector('.jm-caret');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+    if (prefersReduced) {
+      // Sem animação: mostra uma frase estática e esconde o cursor.
+      typeEl.textContent = frases[0];
+      if (caret) caret.style.display = 'none';
+    } else {
+      let fraseIdx = 0;
+      let charIdx = 0;
+      let apagando = false;
 
-      // Se o endpoint ainda não foi configurado, evita um envio quebrado.
-      if (form.action.includes('SEU_ID_FORMSPREE')) {
-        status.textContent = 'Configure o endpoint do Formspree para ativar o envio.';
-        status.className = 'form-status erro';
-        return;
-      }
+      const tick = () => {
+        const frase = frases[fraseIdx];
 
-      submitBtn.disabled = true;
-      const original = submitBtn.textContent;
-      submitBtn.textContent = 'Enviando...';
-      status.textContent = '';
-      status.className = 'form-status';
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { Accept: 'application/json' }
-        });
-
-        if (response.ok) {
-          form.reset();
-          status.textContent = 'Mensagem enviada com sucesso! Em breve entrarei em contato.';
-          status.className = 'form-status ok';
+        if (!apagando) {
+          charIdx++;
+          typeEl.textContent = frase.slice(0, charIdx);
+          if (charIdx === frase.length) {
+            apagando = true;
+            return setTimeout(tick, 2400); // pausa para leitura
+          }
+          setTimeout(tick, 45 + Math.random() * 45);
         } else {
-          throw new Error('Falha no envio');
+          charIdx--;
+          typeEl.textContent = frase.slice(0, charIdx);
+          if (charIdx === 0) {
+            apagando = false;
+            fraseIdx = (fraseIdx + 1) % frases.length;
+            return setTimeout(tick, 500); // pausa antes da próxima frase
+          }
+          setTimeout(tick, 25);
         }
-      } catch (err) {
-        status.textContent = 'Não foi possível enviar agora. Tente pelo WhatsApp ou e-mail.';
-        status.className = 'form-status erro';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = original;
-      }
-    });
+      };
+
+      setTimeout(tick, 700);
+    }
   }
 });

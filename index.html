@@ -64,7 +64,7 @@
   <header>
     <nav class="navbar" aria-label="Navegação principal">
       <a href="#inicio" class="logo" aria-label="Início — Luana Marinho Advocacia">
-        <span class="logo-mark" aria-hidden="true"></span>
+        <img src="assets/img/icone-dourado.png" alt="" width="46">
         <span class="logo-text">Luana Marinho<small>Advocacia Criminal</small></span>
       </a>
 
@@ -235,8 +235,8 @@
           <p class="sec-index">04 — Contato</p>
           <h2>Vamos conversar sobre o seu caso</h2>
           <p class="sec-sub">
-            Cada caso é único e tratado com total sigilo. Preencha o formulário ou fale por um dos canais — o retorno
-            é rápido.
+            Cada caso é único e tratado com total sigilo. Fale por um dos canais abaixo — o atendimento é direto,
+            pessoal e o retorno é rápido.
           </p>
 
           <ul class="contato-canais">
@@ -260,30 +260,55 @@
           </ul>
         </div>
 
-        <!-- IMPORTANTE: troque "SEU_ID_FORMSPREE" pelo ID gerado em https://formspree.io -->
-        <form class="contato-form reveal" action="https://formspree.io/f/SEU_ID_FORMSPREE" method="POST" novalidate>
-          <div class="form-field">
-            <label for="nome">Nome completo</label>
-            <input type="text" id="nome" name="nome" autocomplete="name" required>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
-            </div>
-            <div class="form-field">
-              <label for="telefone">Telefone / WhatsApp</label>
-              <input type="tel" id="telefone" name="telefone" autocomplete="tel">
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="mensagem">Como posso te ajudar?</label>
-            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-          </div>
-          <input type="hidden" name="_subject" value="Novo contato pelo site — Luana Marinho">
-          <button type="submit" class="btn btn-primary form-submit">Enviar mensagem</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
+        <figure class="justice-anim reveal">
+          <svg class="jm-scale" viewBox="0 0 260 172" role="img"
+            aria-label="Ilustração animada de uma balança da justiça">
+            <defs>
+              <linearGradient id="jm-gold" gradientUnits="userSpaceOnUse" x1="130" y1="24" x2="130" y2="156">
+                <stop offset="0" stop-color="#e7c778" />
+                <stop offset="0.55" stop-color="#c69a44" />
+                <stop offset="1" stop-color="#9a7a34" />
+              </linearGradient>
+            </defs>
+
+            <!-- Base escalonada (fixa) -->
+            <line class="jm-base2" x1="102" y1="153" x2="158" y2="153" />
+            <line class="jm-base1" x1="116" y1="145" x2="144" y2="145" />
+            <line class="jm-post" x1="130" y1="145" x2="130" y2="50" />
+            <line class="jm-collar" x1="122" y1="64" x2="138" y2="64" />
+
+            <!-- Pivô e finial ornamental -->
+            <path class="jm-fill" d="M130 35 L138 47 L130 59 L122 47 Z" />
+            <circle class="jm-fill" cx="130" cy="30" r="3.2" />
+
+            <!-- Braço em arco que oscila (gira em torno do pivô) -->
+            <g class="jm-beam">
+              <path class="jm-arm" d="M60 54 Q130 36 200 54" />
+              <circle class="jm-fill" cx="60" cy="54" r="3.6" />
+              <circle class="jm-fill" cx="200" cy="54" r="3.6" />
+
+              <!-- Prato esquerdo (permanece nivelado) -->
+              <g class="jm-pan jm-pan-l">
+                <line class="jm-chain" x1="60" y1="54" x2="42" y2="84" />
+                <line class="jm-chain" x1="60" y1="54" x2="78" y2="84" />
+                <ellipse class="jm-rim" cx="60" cy="84" rx="20" ry="3.6" />
+                <path class="jm-bowl" d="M40 84 Q60 102 80 84" />
+              </g>
+
+              <!-- Prato direito (permanece nivelado) -->
+              <g class="jm-pan jm-pan-r">
+                <line class="jm-chain" x1="200" y1="54" x2="182" y2="84" />
+                <line class="jm-chain" x1="200" y1="54" x2="218" y2="84" />
+                <ellipse class="jm-rim" cx="200" cy="84" rx="20" ry="3.6" />
+                <path class="jm-bowl" d="M180 84 Q200 102 220 84" />
+              </g>
+            </g>
+          </svg>
+
+          <figcaption class="jm-manifesto">
+            <span class="jm-type"></span><span class="jm-caret" aria-hidden="true"></span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   </main>
@@ -292,7 +317,7 @@
   <footer>
     <div class="footer-container">
       <div class="footer-section footer-brand">
-        <span class="logo-mark footer-mark" role="img" aria-label="Luana Marinho Advocacia Criminal"></span>
+        <img src="assets/img/icone-dourado.png" alt="Luana Marinho Advocacia Criminal" width="60">
         <p>Defesa criminal estratégica e humanizada, com atuação nacional.</p>
       </div>
       <div class="footer-section">

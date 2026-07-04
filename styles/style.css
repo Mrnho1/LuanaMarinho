@@ -263,19 +263,9 @@ header {
   margin-right: auto;
 }
 
-/* Monograma da marca: o PNG preto é usado como máscara e recebe a cor
-   dourada do sistema, garantindo visibilidade sobre o fundo escuro */
-.logo-mark {
+/* Monograma dourado da marca (versão recolorida de icone-marca.png) */
+.logo img {
   width: 46px;
-  aspect-ratio: 551 / 427;
-  background-color: var(--gold);
-  -webkit-mask: url("../assets/img/icone-marca.png") no-repeat center / contain;
-  mask: url("../assets/img/icone-marca.png") no-repeat center / contain;
-  transition: background-color 0.3s ease;
-}
-
-.logo:hover .logo-mark {
-  background-color: var(--gold-bright);
 }
 
 .logo-text {
@@ -718,72 +708,137 @@ h2 {
   color: var(--on-dark-soft);
 }
 
-/* Formulário */
-.contato-form {
-  background-color: var(--ink-2);
-  border: 1px solid var(--hairline-dark);
-  padding: 2.2rem;
-  display: grid;
-  gap: 1.1rem;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.1rem;
-}
-
-.form-field {
+/* Animação: Balança da Justiça + manifesto (sem moldura, só o brilho) */
+.justice-anim {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 2rem 1rem;
+  min-height: 400px;
 }
 
-.form-field label {
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--on-dark-soft);
+/* Luz dourada difusa por trás da balança */
+.justice-anim::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  max-width: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle,
+    rgba(216, 182, 95, 0.15),
+    rgba(216, 182, 95, 0.05) 42%,
+    transparent 68%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.form-field input,
-.form-field textarea {
-  background-color: var(--ink);
-  border: 1px solid var(--hairline-dark);
-  padding: 0.85rem 0.95rem;
-  color: var(--on-dark);
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.jm-scale {
+  position: relative;
+  z-index: 1;
+  width: clamp(210px, 66%, 285px);
+  height: auto;
+  fill: none;
+  stroke: url(#jm-gold);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 2px 8px rgba(216, 182, 95, 0.38));
 }
 
-.form-field input:focus,
-.form-field textarea:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(185, 150, 63, 0.16);
+.jm-fill {
+  fill: url(#jm-gold);
+  stroke: none;
 }
 
-.form-field textarea {
-  resize: vertical;
+.jm-post,
+.jm-arm {
+  stroke-width: 3.2;
 }
 
-.form-submit {
-  width: 100%;
-  margin-top: 0.4rem;
+.jm-base2 {
+  stroke-width: 5.5;
 }
 
-.form-status {
-  min-height: 1.2rem;
-  font-size: 0.9rem;
+.jm-base1 {
+  stroke-width: 3.5;
+}
+
+.jm-collar {
+  stroke-width: 2;
+}
+
+.jm-bowl {
+  stroke-width: 2.6;
+}
+
+.jm-rim {
+  stroke-width: 1.5;
+}
+
+.jm-chain {
+  stroke-width: 1.4;
+  opacity: 0.92;
+}
+
+/* O braço oscila em torno do pivô; cada prato contra-gira para
+   permanecer nivelado, como numa balança real */
+.jm-beam {
+  transform-box: view-box;
+  transform-origin: 130px 50px;
+  animation: jm-sway 5.5s ease-in-out infinite;
+}
+
+.jm-pan-l,
+.jm-pan-r {
+  transform-box: view-box;
+  animation: jm-sway-cc 5.5s ease-in-out infinite;
+}
+
+.jm-pan-l { transform-origin: 60px 54px; }
+.jm-pan-r { transform-origin: 200px 54px; }
+
+@keyframes jm-sway {
+  0%, 100% { transform: rotate(3.2deg); }
+  50%      { transform: rotate(-3.2deg); }
+}
+
+@keyframes jm-sway-cc {
+  0%, 100% { transform: rotate(-3.2deg); }
+  50%      { transform: rotate(3.2deg); }
+}
+
+.jm-manifesto {
+  position: relative;
+  z-index: 1;
+  min-height: 4.6em;
+  max-width: 22ch;
   text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--on-dark);
 }
 
-.form-status.ok {
-  color: #84c98e;
+.jm-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -0.14em;
+  background-color: var(--gold-bright);
+  animation: jm-blink 1s steps(1) infinite;
 }
 
-.form-status.erro {
-  color: #e58a8a;
+@keyframes jm-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
 }
 
 /* ===================== FOOTER ===================== */
@@ -808,7 +863,7 @@ footer {
   flex: 1 1 220px;
 }
 
-.footer-mark {
+.footer-brand img {
   width: 60px;
   margin-bottom: 1rem;
 }
@@ -966,10 +1021,6 @@ footer {
 }
 
 @media (max-width: 560px) {
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
 
   .footer-container {
     flex-direction: column;
