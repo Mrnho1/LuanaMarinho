@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://luanamarinhoadvogada.com.br/</loc>
+    <lastmod>2026-07-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://luanamarinhoadvogada.com.br/assets/img/luana-marinho.jpg</image:loc>
+      <image:title>Dra. Luana da Silva Marinho — advogada criminalista OAB/SP 497.409</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://luanamarinhoadvogada.com.br/assets/img/escritorio.jpg</image:loc>
+      <image:title>Escritório de advocacia criminal Luana Marinho em São Paulo</image:title>
+    </image:image>
+  </url>
+</urlset>

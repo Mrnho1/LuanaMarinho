@@ -1,0 +1,15 @@
+{
+  "name": "Luana Marinho Advocacia Criminal",
+  "short_name": "Luana Marinho",
+  "description": "Advogada criminalista em São Paulo com atuação nacional.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#14161c",
+  "theme_color": "#12141a",
+  "icons": [
+    { "src": "/assets/img/favicon.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "Landing page — Luana Marinho Advocacia Criminal",
   "private": true,
+  "homepage": "https://luanamarinhoadvogada.com.br/",
   "scripts": {
-    "dev": "live-server --port=5173 --no-browser",
-    "start": "live-server --port=5173"
+    "dev": "live-server --port=5173 --no-browser --watch=index.html,styles,scripts,assets",
+    "start": "live-server --port=5173 --watch=index.html,styles,scripts,assets",
+    "images": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "sharp": "^0.35.3"
   }
 }

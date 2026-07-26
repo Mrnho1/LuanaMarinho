@@ -1,5 +1,6 @@
-/* ===================== FONTES ===================== */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap');
+/* ===================== FONTES =====================
+   Carregadas por <link rel="preload"> no index.html. Um @import aqui atrasaria
+   o download em uma volta extra de rede e pioraria o LCP. */
 
 /* ===================== RESET ===================== */
 * {
@@ -100,6 +101,23 @@ body {
   max-width: var(--wrap);
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+/* Atalho para leitores de tela e navegação por teclado */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 0.9rem 1.4rem;
+  background-color: var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.skip-link:focus {
+  left: 0;
 }
 
 /* Rótulo de seção numerado */
@@ -662,7 +680,102 @@ h2 {
   transform: translateX(0);
 }
 
+/* ===================== PERGUNTAS FREQUENTES ===================== */
+.faq-list {
+  border-top: 1px solid var(--hairline-dark);
+  max-width: 900px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.6rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.4s ease, padding-left 0.4s ease;
+}
+
+/* Remove o marcador nativo (Safari usa ::-webkit-details-marker) */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary:hover {
+  background-color: var(--ink-2);
+  padding-left: 1.8rem;
+}
+
+.faq-item summary:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: -1px;
+}
+
+.faq-item summary h3 {
+  font-size: clamp(1.05rem, 1.9vw, 1.35rem);
+  color: var(--on-dark);
+  transition: color 0.3s ease;
+}
+
+.faq-item summary:hover h3,
+.faq-item[open] summary h3 {
+  color: var(--gold-bright);
+}
+
+/* Marcador "+" que vira "−" quando aberto */
+.faq-mark {
+  position: relative;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.faq-mark::before,
+.faq-mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 1px;
+  background-color: var(--gold);
+  transition: transform 0.35s cubic-bezier(.2, .7, .2, 1);
+}
+
+.faq-mark::after {
+  transform: rotate(90deg);
+}
+
+.faq-item[open] .faq-mark::after {
+  transform: rotate(0deg);
+}
+
+.faq-answer {
+  padding: 0 1rem 1.8rem;
+}
+
+.faq-answer p {
+  color: var(--on-dark-soft);
+  max-width: 70ch;
+}
+
+.faq-answer strong {
+  color: var(--on-dark);
+  font-weight: 500;
+}
+
 /* ===================== CONTATO ===================== */
+
+/* Separa duas faixas escuras consecutivas sem quebrar o ritmo vertical */
+.band-divided {
+  border-top: 1px solid var(--hairline-dark);
+}
+
 .contato-canais {
   display: grid;
   gap: 0.9rem;
