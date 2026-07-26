@@ -764,6 +764,16 @@ h2 {
   max-width: 70ch;
 }
 
+.faq-answer a {
+  color: var(--gold-bright);
+  border-bottom: 1px solid rgba(216, 182, 95, 0.35);
+  transition: border-color 0.3s ease;
+}
+
+.faq-answer a:hover {
+  border-bottom-color: var(--gold-bright);
+}
+
 .faq-answer strong {
   color: var(--on-dark);
   font-weight: 500;
@@ -1292,4 +1302,115 @@ footer {
   .hero .lead {
     margin-bottom: 1.2rem;
   }
+}
+
+
+/* ===================== SEO PAGE ===================== */
+.area-row {
+  color: inherit;
+}
+
+a.area-row:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: -1px;
+}
+
+.area-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.4rem;
+  margin-top: 2.2rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--hairline-dark);
+}
+
+.area-links a {
+  color: var(--gold-bright);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.area-links a:hover {
+  border-bottom-color: var(--gold-bright);
+}
+
+.page-hero {
+  padding-top: clamp(7.5rem, 14vw, 9.5rem);
+  padding-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  max-width: 18ch;
+  margin: 0.6rem 0 1.1rem;
+  color: var(--on-dark);
+}
+
+.page-lead {
+  max-width: 62ch;
+  color: var(--on-dark-soft);
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  margin-bottom: 1.8rem;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.6rem;
+  font-size: 0.88rem;
+  color: var(--on-dark-soft);
+}
+
+.breadcrumb a {
+  color: var(--gold-bright);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.page-prose {
+  max-width: 760px;
+}
+
+.prose-block + .prose-block {
+  margin-top: 2.6rem;
+}
+
+.band-light .prose-block h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  margin-bottom: 1rem;
+  color: var(--on-light);
+}
+
+.band-light .prose-block p {
+  color: var(--on-light-soft);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.related-list {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+}
+
+.related-list a {
+  color: var(--on-light);
+  border-bottom: 1px solid var(--hairline-light);
+  padding-bottom: 0.35rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.related-list a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
 }

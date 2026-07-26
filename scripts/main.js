@@ -24,17 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelector('.nav-links');
   const navbar = document.querySelector('.navbar');
 
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('nav-active');
-    menuToggle.classList.toggle('active', isOpen);
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-  });
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('nav-active');
+      menuToggle.classList.toggle('active', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+    });
+  }
 
   /* ---------- Navbar: efeito ao rolar ---------- */
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
-  });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+    });
+  }
 
   /* ---------- Fechar menu ao clicar em um link ---------- */
   const navItems = document.querySelectorAll('.nav-links a');

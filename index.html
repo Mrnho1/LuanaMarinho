@@ -38,12 +38,14 @@
   <meta property="og:image" content="https://luanamarinhoadvogada.com.br/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:alt" content="Luana Marinho — Advocacia Criminal">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Advogada Criminalista em São Paulo | Dra. Luana Marinho">
   <meta name="twitter:description" content="Defesa criminal estratégica e humanizada, com atuação nacional.">
   <meta name="twitter:image" content="https://luanamarinhoadvogada.com.br/assets/img/og-image.jpg">
+  <meta name="twitter:image:alt" content="Luana Marinho — Advocacia Criminal">
 
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -62,7 +64,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap">
   </noscript>
 
-  <link rel="stylesheet" href="styles/style.css?v=6">
+  <link rel="stylesheet" href="styles/style.css?v=7">
   <link rel="preload" as="image" href="assets/img/logo-luana.webp" type="image/webp" fetchpriority="high">
 
   <!-- Sem JS, .reveal ficaria com opacity:0 e o conteúdo invisível para o usuário -->
@@ -74,124 +76,251 @@
 
   <!-- Dados estruturados -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["Attorney", "LegalService"],
-        "@id": "https://luanamarinhoadvogada.com.br/#advogada",
-        "name": "Luana Marinho Advocacia Criminal",
-        "legalName": "Luana da Silva Marinho",
-        "description": "Advogada criminalista em São Paulo com atuação nacional, especializada em Direito Penal e Processo Penal. Defesa em prisões em flagrante, audiências de custódia, inquéritos policiais, tribunal do júri e execução penal.",
-        "image": "https://luanamarinhoadvogada.com.br/assets/img/luana-marinho.jpg",
-        "logo": "https://luanamarinhoadvogada.com.br/assets/img/icone-marca.png",
-        "url": "https://luanamarinhoadvogada.com.br/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "Attorney",
+        "LegalService"
+      ],
+      "@id": "https://luanamarinhoadvogada.com.br/#advogada",
+      "name": "Luana Marinho Advocacia Criminal",
+      "legalName": "Luana da Silva Marinho",
+      "description": "Advogada criminalista em São Paulo com atuação nacional, especializada em Direito Penal e Processo Penal. Defesa em prisões em flagrante, audiências de custódia, inquéritos policiais, tribunal do júri, habeas corpus e execução penal.",
+      "image": "https://luanamarinhoadvogada.com.br/assets/img/luana-marinho.jpg",
+      "logo": "https://luanamarinhoadvogada.com.br/assets/img/icone-marca.png",
+      "url": "https://luanamarinhoadvogada.com.br/",
+      "telephone": "+55-11-94847-5152",
+      "email": "luanamarinho.advogada@gmail.com",
+      "knowsLanguage": "pt-BR",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Brasil"
+        },
+        {
+          "@type": "State",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "City",
+          "name": "São Paulo"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+55-11-94847-5152",
         "email": "luanamarinho.advogada@gmail.com",
-        "knowsLanguage": "pt-BR",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "São Paulo",
-          "addressRegion": "SP",
-          "addressCountry": "BR"
-        },
-        "areaServed": [
-          { "@type": "Country", "name": "Brasil" },
-          { "@type": "State", "name": "São Paulo" }
-        ],
-        "knowsAbout": [
-          "Direito Penal", "Processo Penal", "Tribunal do Júri",
-          "Execução Penal", "Audiência de Custódia", "Direito Penal Econômico",
-          "Habeas Corpus", "Inquérito Policial", "Criminal Compliance"
-        ],
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Inscrição na Ordem dos Advogados do Brasil",
-          "identifier": "OAB/SP 497.409",
-          "recognizedBy": { "@type": "Organization", "name": "Ordem dos Advogados do Brasil — Seção São Paulo" }
-        },
-        "sameAs": ["https://www.linkedin.com/in/luanasmarinho"]
-      },
-      {
-        "comment": "Áreas de atuação como ItemList informativa. Não usar OfferCatalog/Offer: o Provimento 205/2021 da OAB veda a mercantilização da advocacia, e Offer é vocabulário de oferta comercial.",
-        "@type": "ItemList",
-        "@id": "https://luanamarinhoadvogada.com.br/#areas",
-        "name": "Áreas de atuação em Direito Penal",
-        "itemListOrder": "https://schema.org/ItemListUnordered",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Prisões em flagrante" },
-          { "@type": "ListItem", "position": 2, "name": "Acompanhamento de inquéritos" },
-          { "@type": "ListItem", "position": 3, "name": "Acompanhamento em delegacias" },
-          { "@type": "ListItem", "position": 4, "name": "Audiência de custódia" },
-          { "@type": "ListItem", "position": 5, "name": "Processo de conhecimento e recursos" },
-          { "@type": "ListItem", "position": 6, "name": "Execução penal" }
+        "contactType": "customer service",
+        "areaServed": "BR",
+        "availableLanguage": [
+          "Portuguese"
         ]
       },
-      {
-        "@type": "WebSite",
-        "@id": "https://luanamarinhoadvogada.com.br/#site",
-        "url": "https://luanamarinhoadvogada.com.br/",
-        "name": "Luana Marinho Advocacia Criminal",
-        "inLanguage": "pt-BR",
-        "publisher": { "@id": "https://luanamarinhoadvogada.com.br/#advogada" }
+      "knowsAbout": [
+        "Direito Penal",
+        "Processo Penal",
+        "Tribunal do Júri",
+        "Execução Penal",
+        "Audiência de Custódia",
+        "Direito Penal Econômico",
+        "Habeas Corpus",
+        "Inquérito Policial",
+        "Prisão em Flagrante",
+        "Criminal Compliance"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Inscrição na Ordem dos Advogados do Brasil",
+        "identifier": "OAB/SP 497.409",
+        "recognizedBy": {
+          "@type": "Organization",
+          "name": "Ordem dos Advogados do Brasil — Seção São Paulo"
+        }
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://luanamarinhoadvogada.com.br/#pagina",
-        "url": "https://luanamarinhoadvogada.com.br/",
-        "name": "Advogada Criminalista em São Paulo | Dra. Luana Marinho — OAB/SP 497.409",
-        "isPartOf": { "@id": "https://luanamarinhoadvogada.com.br/#site" },
-        "about": { "@id": "https://luanamarinhoadvogada.com.br/#advogada" },
-        "inLanguage": "pt-BR"
+      "employee": {
+        "@id": "https://luanamarinhoadvogada.com.br/#pessoa"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://luanamarinhoadvogada.com.br/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "O que fazer quando um familiar é preso em flagrante?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Procure um advogado criminalista. As primeiras horas após a prisão concentram atos importantes do procedimento: a lavratura do auto de prisão em flagrante, a verificação da legalidade da abordagem e a preparação para a audiência de custódia, que ocorre em até 24 horas. É nesse intervalo que a defesa técnica reúne os elementos para requerer o relaxamento da prisão ou a liberdade provisória, quando houver fundamento legal para o pedido."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Preciso de advogado na audiência de custódia?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sim. A audiência de custódia é o momento em que o juiz decide se a prisão será mantida, relaxada ou convertida em liberdade provisória, e também em que se apuram eventuais abusos ou violências na abordagem policial. Ter advogado constituído permite uma sustentação preparada com as particularidades do caso, em vez de uma defesa genérica feita sem tempo de análise prévia."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Posso ser intimado a depor na delegacia sem advogado?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Você pode ser intimado, mas tem direito constitucional a ser acompanhado por advogado e a permanecer em silêncio, sem que isso seja usado contra você. Depor sem orientação jurídica é um dos erros mais custosos em um inquérito: declarações prestadas nessa fase acompanham o processo até o final. O acompanhamento em delegacia garante que a ampla defesa seja respeitada desde o primeiro ato."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Como funciona o primeiro atendimento e o sigilo do caso?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "O primeiro contato pode ser feito por WhatsApp ou e-mail e serve para entender a situação, avaliar a urgência e explicar os caminhos possíveis. Todo o conteúdo é protegido pelo sigilo profissional previsto no Estatuto da Advocacia, que se aplica desde a primeira conversa, mesmo que o caso não venha a ser contratado."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "O que é execução penal e por que preciso de advogado nessa fase?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A execução penal é a fase de cumprimento da pena, após a condenação definitiva. É nela que se discutem progressão de regime, livramento condicional, remição por trabalho ou estudo, indulto e demais benefícios. Esses direitos raramente são concedidos de ofício: dependem de pedidos técnicos e acompanhamento constante, sob pena de a pessoa cumprir mais tempo de pena do que a lei determina."
-            }
-          }
-        ]
+      "sameAs": [
+        "https://www.linkedin.com/in/luanasmarinho"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://luanamarinhoadvogada.com.br/#pessoa",
+      "name": "Luana da Silva Marinho",
+      "honorificPrefix": "Dra.",
+      "jobTitle": "Advogada Criminalista",
+      "image": "https://luanamarinhoadvogada.com.br/assets/img/luana-marinho.jpg",
+      "url": "https://luanamarinhoadvogada.com.br/",
+      "telephone": "+55-11-94847-5152",
+      "email": "luanamarinho.advogada@gmail.com",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidade São Judas Tadeu"
+      },
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "credentialCategory": "Inscrição na Ordem dos Advogados do Brasil",
+        "identifier": "OAB/SP 497.409"
+      },
+      "worksFor": {
+        "@id": "https://luanamarinhoadvogada.com.br/#advogada"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/luanasmarinho"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://luanamarinhoadvogada.com.br/#areas",
+      "name": "Áreas de atuação em Direito Penal",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Prisões em flagrante",
+          "url": "https://luanamarinhoadvogada.com.br/prisao-em-flagrante/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Acompanhamento de inquéritos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Acompanhamento em delegacias"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Audiência de custódia",
+          "url": "https://luanamarinhoadvogada.com.br/audiencia-de-custodia/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Processo de conhecimento e recursos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Execução penal",
+          "url": "https://luanamarinhoadvogada.com.br/execucao-penal/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Tribunal do Júri",
+          "url": "https://luanamarinhoadvogada.com.br/tribunal-do-juri/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Habeas corpus",
+          "url": "https://luanamarinhoadvogada.com.br/habeas-corpus/"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://luanamarinhoadvogada.com.br/#site",
+      "url": "https://luanamarinhoadvogada.com.br/",
+      "name": "Luana Marinho Advocacia Criminal",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://luanamarinhoadvogada.com.br/#advogada"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://luanamarinhoadvogada.com.br/#pagina",
+      "url": "https://luanamarinhoadvogada.com.br/",
+      "name": "Advogada Criminalista em São Paulo | Dra. Luana Marinho — OAB/SP 497.409",
+      "isPartOf": {
+        "@id": "https://luanamarinhoadvogada.com.br/#site"
+      },
+      "about": {
+        "@id": "https://luanamarinhoadvogada.com.br/#advogada"
+      },
+      "mainEntity": {
+        "@id": "https://luanamarinhoadvogada.com.br/#advogada"
+      },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://luanamarinhoadvogada.com.br/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "O que fazer quando um familiar é preso em flagrante?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Procure um advogado criminalista. As primeiras horas após a prisão concentram atos importantes do procedimento: a lavratura do auto de prisão em flagrante, a verificação da legalidade da abordagem e a preparação para a audiência de custódia, que ocorre em até 24 horas. É nesse intervalo que a defesa técnica reúne os elementos para requerer o relaxamento da prisão ou a liberdade provisória, quando houver fundamento legal para o pedido."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de advogado na audiência de custódia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A audiência de custódia é o momento em que o juiz decide se a prisão será mantida, relaxada ou convertida em liberdade provisória, e também em que se apuram eventuais abusos ou violências na abordagem policial. Ter advogado constituído permite uma sustentação preparada com as particularidades do caso, em vez de uma defesa genérica feita sem tempo de análise prévia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso ser intimado a depor na delegacia sem advogado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Você pode ser intimado, mas tem direito constitucional a ser acompanhado por advogado e a permanecer em silêncio, sem que isso seja usado contra você. Depor sem orientação jurídica é um dos erros mais custosos em um inquérito: declarações prestadas nessa fase acompanham o processo até o final. O acompanhamento em delegacia garante que a ampla defesa seja respeitada desde o primeiro ato."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o primeiro atendimento e o sigilo do caso?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O primeiro contato pode ser feito por WhatsApp ou e-mail e serve para entender a situação, avaliar a urgência e explicar os caminhos possíveis. Todo o conteúdo é protegido pelo sigilo profissional previsto no Estatuto da Advocacia, que se aplica desde a primeira conversa, mesmo que o caso não venha a ser contratado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é execução penal e por que preciso de advogado nessa fase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A execução penal é a fase de cumprimento da pena, após a condenação definitiva. É nela que se discutem progressão de regime, livramento condicional, remição por trabalho ou estudo, indulto e demais benefícios. Esses direitos raramente são concedidos de ofício: dependem de pedidos técnicos e acompanhamento constante, sob pena de a pessoa cumprir mais tempo de pena do que a lei determina."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quando o habeas corpus é a medida adequada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Quando há coação ilegal ou ameaça à liberdade de ir e vir — por exemplo, prisão sem fundamento idôneo ou constrangimento indevido no inquérito ou no processo. Nem todo caso exige habeas corpus: a escolha entre habeas corpus, liberdade provisória ou recurso próprio é decisão técnica da defesa criminal, a partir dos autos e da urgência."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A advogada atua em Tribunal do Júri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Tribunal do Júri julga crimes dolosos contra a vida e exige defesa específica desde a instrução até o plenário. A Dra. Luana Marinho atua nessa frente com formação em Tribunal do Júri e foco exclusivo na advocacia criminal, em São Paulo e com atuação nacional conforme o caso."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 
@@ -282,7 +411,7 @@
             Econômico, Criminal Compliance e atendimento a mulheres em situação de violência.
           </p>
           <p>
-            Com ética, preparo e sensibilidade, enfrento os desafios do Direito Penal com compromisso e estratégia.
+            Com ética, preparo e sensibilidade, enfrento os desafios do Direito Penal com compromisso e estratégia — como advogada criminalista em São Paulo e com atuação nacional.
           </p>
         </div>
       </div>
@@ -301,19 +430,21 @@
         </header>
 
         <ul class="area-list">
-          <li class="area-row reveal">
-            <span class="area-num">01</span>
-            <div class="area-body">
-              <h3>Prisões em Flagrante</h3>
-              <p>Atuação imediata em casos de prisão para garantir os direitos do cliente desde o primeiro momento.</p>
-            </div>
-            <span class="area-arrow" aria-hidden="true">→</span>
+          <li>
+            <a class="area-row reveal" href="/prisao-em-flagrante/">
+              <span class="area-num">01</span>
+              <div class="area-body">
+                <h3>Prisões em Flagrante</h3>
+                <p>Atuação imediata nas primeiras horas da prisão em flagrante em São Paulo e em âmbito nacional: análise da legalidade, acompanhamento em delegacia e preparação para a audiência de custódia.</p>
+              </div>
+              <span class="area-arrow" aria-hidden="true">→</span>
+            </a>
           </li>
           <li class="area-row reveal">
             <span class="area-num">02</span>
             <div class="area-body">
               <h3>Acompanhamento de Inquéritos</h3>
-              <p>Atuação técnica na fase de investigação para preservar a liberdade e os direitos do investigado.</p>
+              <p>Defesa técnica na fase de inquérito policial para preservar direitos do investigado, orientar depoimentos e evitar constrangimentos ilegais desde a investigação.</p>
             </div>
             <span class="area-arrow" aria-hidden="true">→</span>
           </li>
@@ -321,35 +452,47 @@
             <span class="area-num">03</span>
             <div class="area-body">
               <h3>Acompanhamento em Delegacias</h3>
-              <p>Presença em depoimentos e procedimentos policiais para garantir a ampla defesa.</p>
+              <p>Presença em depoimentos e procedimentos policiais, com garantia do direito ao silêncio e da ampla defesa em cada ato na delegacia.</p>
             </div>
             <span class="area-arrow" aria-hidden="true">→</span>
           </li>
-          <li class="area-row reveal">
-            <span class="area-num">04</span>
-            <div class="area-body">
-              <h3>Audiência de Custódia</h3>
-              <p>Representação para avaliar a legalidade da prisão e prevenir qualquer tipo de abuso.</p>
-            </div>
-            <span class="area-arrow" aria-hidden="true">→</span>
+          <li>
+            <a class="area-row reveal" href="/audiencia-de-custodia/">
+              <span class="area-num">04</span>
+              <div class="area-body">
+                <h3>Audiência de Custódia</h3>
+                <p>Representação na audiência de custódia para avaliar a legalidade da prisão, registrar eventuais abusos e requerer liberdade provisória quando cabível.</p>
+              </div>
+              <span class="area-arrow" aria-hidden="true">→</span>
+            </a>
           </li>
           <li class="area-row reveal">
             <span class="area-num">05</span>
             <div class="area-body">
               <h3>Processo de Conhecimento e Recursos</h3>
-              <p>Defesa em todas as instâncias e interposição de recursos contra decisões injustas.</p>
+              <p>Defesa criminal em todas as instâncias, com acompanhamento do processo penal e interposição de recursos contra decisões que violem direitos fundamentais.</p>
             </div>
             <span class="area-arrow" aria-hidden="true">→</span>
           </li>
-          <li class="area-row reveal">
-            <span class="area-num">06</span>
-            <div class="area-body">
-              <h3>Execução Penal</h3>
-              <p>Acompanhamento do cumprimento da pena, progressão de regime e garantia dos direitos do apenado.</p>
-            </div>
-            <span class="area-arrow" aria-hidden="true">→</span>
+          <li>
+            <a class="area-row reveal" href="/execucao-penal/">
+              <span class="area-num">06</span>
+              <div class="area-body">
+                <h3>Execução Penal</h3>
+                <p>Acompanhamento do cumprimento da pena: progressão de regime, livramento condicional, remição, indulto e demais direitos do apenado.</p>
+              </div>
+              <span class="area-arrow" aria-hidden="true">→</span>
+            </a>
           </li>
         </ul>
+
+        <nav class="area-links reveal" aria-label="Páginas relacionadas de atuação">
+          <a href="/tribunal-do-juri/">Tribunal do Júri</a>
+          <a href="/habeas-corpus/">Habeas Corpus</a>
+          <a href="/prisao-em-flagrante/">Prisão em Flagrante</a>
+          <a href="/audiencia-de-custodia/">Audiência de Custódia</a>
+          <a href="/execucao-penal/">Execução Penal</a>
+        </nav>
       </div>
     </section>
 
@@ -407,7 +550,7 @@
             </summary>
             <div class="faq-answer">
               <p>
-                Procure um advogado criminalista. As primeiras horas após a prisão concentram atos importantes do
+                Procure um <a href="/prisao-em-flagrante/">advogado criminalista</a>. As primeiras horas após a prisão concentram atos importantes do
                 procedimento: a lavratura do auto de prisão em flagrante, a verificação da legalidade da abordagem e
                 a preparação para a <strong>audiência de custódia</strong>, que ocorre em até 24 horas. É nesse
                 intervalo que a defesa técnica reúne os elementos para requerer o relaxamento da prisão ou a
@@ -423,7 +566,7 @@
             </summary>
             <div class="faq-answer">
               <p>
-                Sim. A audiência de custódia é o momento em que o juiz decide se a prisão será mantida, relaxada ou
+                Sim. A <a href="/audiencia-de-custodia/">audiência de custódia</a> é o momento em que o juiz decide se a prisão será mantida, relaxada ou
                 convertida em liberdade provisória, e também em que se apuram eventuais abusos ou violências na
                 abordagem policial. Ter advogado constituído permite uma sustentação preparada com as
                 particularidades do caso, em vez de uma defesa genérica feita sem tempo de análise prévia.
@@ -468,10 +611,43 @@
             </summary>
             <div class="faq-answer">
               <p>
-                A execução penal é a fase de cumprimento da pena, após a condenação definitiva. É nela que se
+                A <a href="/execucao-penal/">execução penal</a> é a fase de cumprimento da pena, após a condenação definitiva. É nela que se
                 discutem progressão de regime, livramento condicional, remição por trabalho ou estudo, indulto e
                 demais benefícios. Esses direitos raramente são concedidos de ofício: dependem de pedidos técnicos e
                 acompanhamento constante, sob pena de a pessoa cumprir mais tempo de pena do que a lei determina.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>
+              <h3>Quando o habeas corpus é a medida adequada?</h3>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Quando há coação ilegal ou ameaça à liberdade de ir e vir — por exemplo, prisão sem
+                fundamento idôneo ou constrangimento indevido no inquérito ou no processo. Nem todo
+                caso exige <strong>habeas corpus</strong>: a escolha entre habeas corpus, liberdade
+                provisória ou recurso próprio é decisão técnica da defesa criminal, a partir dos
+                autos e da urgência. Saiba mais em
+                <a href="/habeas-corpus/">habeas corpus</a>.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item reveal">
+            <summary>
+              <h3>A advogada atua em Tribunal do Júri?</h3>
+              <span class="faq-mark" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Sim. O <strong>Tribunal do Júri</strong> julga crimes dolosos contra a vida e exige
+                defesa específica desde a instrução até o plenário. A Dra. Luana Marinho atua nessa
+                frente com formação em Tribunal do Júri e foco exclusivo na advocacia criminal, em
+                São Paulo e com atuação nacional conforme o caso. Veja
+                <a href="/tribunal-do-juri/">atuação no júri</a>.
               </p>
             </div>
           </details>
@@ -578,8 +754,11 @@
           <li><a href="#inicio">Início</a></li>
           <li><a href="#luana">A Advogada</a></li>
           <li><a href="#areas">Áreas de Atuação</a></li>
-          <li><a href="#escritorio">O Escritório</a></li>
-          <li><a href="#duvidas">Perguntas Frequentes</a></li>
+          <li><a href="/prisao-em-flagrante/">Prisão em Flagrante</a></li>
+          <li><a href="/audiencia-de-custodia/">Audiência de Custódia</a></li>
+          <li><a href="/execucao-penal/">Execução Penal</a></li>
+          <li><a href="/tribunal-do-juri/">Tribunal do Júri</a></li>
+          <li><a href="/habeas-corpus/">Habeas Corpus</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -615,7 +794,7 @@
     </svg>
   </a>
 
-  <script src="scripts/main.js?v=4" defer></script>
+  <script src="scripts/main.js?v=5" defer></script>
 </body>
 
 </html>
