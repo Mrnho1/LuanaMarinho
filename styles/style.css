@@ -1042,10 +1042,18 @@ footer {
     display: none;
   }
 
+  /* 100vh no celular é a altura SEM a barra de URL, então o conteúdo centrado
+     nela nasce empurrado para fora da área visível. svh é a altura garantida,
+     com a barra à mostra — e, ao contrário de dvh, não muda durante a rolagem. */
+  .hero {
+    min-height: 100svh;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 8rem;
+    padding: 6.5rem 1.5rem 3rem;
+    gap: 1.6rem;
   }
 
   .kicker {
@@ -1056,9 +1064,19 @@ footer {
     justify-content: center;
   }
 
+  /* Sem as duas colunas, a marca passa a ocupar altura vertical em vez de
+     largura ociosa — precisa encolher para o CTA continuar na primeira tela */
   .hero-figure {
     order: -1;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* Largura em px + margem automática: com porcentagem o figure vira
+     shrink-to-fit por causa do justify-self e a imagem encosta à esquerda */
+  .hero-figure img {
+    width: 260px;
+    max-width: 60%;
+    margin-inline: auto;
   }
 
   .hero-figure::after {
@@ -1151,5 +1169,61 @@ footer {
   .hero-figure::after,
   .portrait::after {
     display: none;
+  }
+
+  /* Em telas de celular o hero inteiro (marca + H1 + apoio + CTA) precisa
+     caber sem rolagem. Cada valor abaixo foi medido em 360, 390 e 430px. */
+  .hero-grid {
+    padding: 5.5rem 1.5rem 2.5rem;
+    gap: 1.2rem;
+  }
+
+  .hero-figure img {
+    width: 185px;
+    max-width: 52%;
+  }
+
+  /* O texto do kicker quebra em duas linhas nesta largura e o traço decorativo
+     fica solto na lateral; sem ele a linha centraliza limpa. */
+  .kicker-line {
+    display: none;
+  }
+
+  .kicker {
+    margin-bottom: 1.1rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(1.95rem, 8.4vw, 2.4rem);
+    margin-bottom: 1.1rem;
+  }
+
+  .hero .lead {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-actions {
+    gap: 1rem;
+  }
+}
+
+/* Aparelhos baixos (Android de 640px de altura e similares). A consulta é por
+   altura, e não por largura, para não apertar o hero de celulares maiores. */
+@media (max-width: 560px) and (max-height: 700px) {
+
+  .hero-grid {
+    padding: 4rem 1.5rem 2rem;
+    gap: 1rem;
+  }
+
+  .hero-figure img {
+    width: min(118px, 34%);
+  }
+
+  .hero .lead {
+    margin-bottom: 1.2rem;
   }
 }
