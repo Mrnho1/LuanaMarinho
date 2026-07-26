@@ -1035,6 +1035,72 @@ footer {
   letter-spacing: 0.04em;
 }
 
+/* ===================== ATALHO FIXO DO WHATSAPP ===================== */
+
+/* z-index abaixo de 1000 de propósito: é o valor da navbar, e o menu mobile
+   abre a partir dela — o botão precisa passar por baixo, não por cima. */
+.wa-float {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: calc(clamp(1rem, 3vw, 1.75rem) + env(safe-area-inset-bottom, 0px));
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  color: #1a1407;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(216, 182, 95, 0.35);
+  transition:
+    transform 0.35s cubic-bezier(.2, .7, .2, 1),
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.wa-float:hover {
+  background-color: var(--gold-bright);
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(216, 182, 95, 0.55);
+}
+
+.wa-float:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 4px;
+}
+
+.wa-float:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 560px) {
+
+  .wa-float {
+    width: 52px;
+    height: 52px;
+  }
+
+  .wa-float svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* No desktop o texto final do rodapé é centralizado e o botão fica na margem
+   direita, sem colisão. No celular a linha ocupa a largura toda e passa por
+   baixo dele — daí a reserva de espaço, só nas larguras em que isso ocorre. */
+@media (max-width: 900px) {
+
+  .footer-bottom {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* ===================== RESPONSIVO ===================== */
 @media (max-width: 900px) {
 
