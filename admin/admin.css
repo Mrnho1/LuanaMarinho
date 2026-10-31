@@ -1,0 +1,654 @@
+/* ===================== PAINEL DE ARTIGOS =====================
+   Usa os tokens e botões de styles/style.css; aqui só o que é do painel. */
+
+/* .btn, .adm-usuario etc. definem display e venceriam o atributo hidden */
+.adm [hidden] {
+  display: none !important;
+}
+
+.adm {
+  min-height: 100vh;
+  background-color: var(--ivory);
+  color: var(--on-light);
+}
+
+.adm-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.adm button:focus-visible,
+.adm a:focus-visible,
+.adm-arquivo:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Topo ---------- */
+.adm-topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem 1.5rem;
+  padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
+  background-color: var(--ink);
+  border-bottom: 1px solid var(--hairline-dark);
+}
+
+.adm-topo .logo {
+  margin-right: 0;
+}
+
+.adm-usuario {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.3rem;
+  font-size: 0.88rem;
+  color: var(--on-dark-soft);
+}
+
+.adm-usuario .adm-link {
+  color: var(--gold-bright);
+}
+
+/* ---------- Avisos ---------- */
+.adm-aviso {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  z-index: 100;
+  width: max-content;
+  max-width: min(92vw, 560px);
+  padding: 0.85rem 1.2rem;
+  transform: translateX(-50%);
+  background-color: var(--ink);
+  color: var(--on-dark);
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 14px 34px rgba(20, 22, 28, 0.25);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.adm-aviso[data-tipo="erro"] {
+  border-left-color: #d0473a;
+}
+
+.adm-aviso[data-tipo="ok"] {
+  border-left-color: #4fa36b;
+}
+
+/* ---------- Estrutura ---------- */
+.adm-main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.8rem) clamp(1rem, 4vw, 2.5rem) 5rem;
+}
+
+.adm h1 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--on-light);
+}
+
+.adm-carregando {
+  padding: 4rem 0;
+  text-align: center;
+  color: var(--on-light-soft);
+}
+
+.adm-cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.adm-cartao,
+.adm-bloco,
+.adm-papel,
+.adm-item {
+  background-color: #fff;
+  border: 1px solid var(--hairline-light);
+}
+
+.adm-cartao {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.adm-estreito {
+  max-width: 440px;
+  margin: clamp(1rem, 6vh, 4rem) auto;
+}
+
+.adm-ajuda {
+  margin: 0.4rem 0 1.6rem;
+  color: var(--on-light-soft);
+}
+
+/* ---------- Formulários ---------- */
+.adm-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--on-light);
+}
+
+.adm-campo em {
+  font-style: normal;
+  font-weight: 400;
+  color: var(--on-light-soft);
+}
+
+.adm-campo small {
+  margin-left: 0.3rem;
+  font-weight: 400;
+  color: var(--on-light-soft);
+}
+
+.adm input[type="text"],
+.adm input[type="email"],
+.adm input[type="password"],
+.adm textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--on-light);
+  background-color: #fff;
+  border: 1px solid rgba(29, 32, 38, 0.22);
+  border-radius: 2px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.adm input:focus,
+.adm textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(185, 150, 63, 0.2);
+}
+
+.adm textarea {
+  resize: vertical;
+}
+
+.adm-dica {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--on-light-soft);
+}
+
+.adm-campo small.adm-dica {
+  margin-left: 0;
+}
+
+#slug-aviso {
+  color: #8a4b08;
+}
+
+[data-estado="ok"] {
+  color: #2d6b42 !important;
+}
+
+[data-estado="fora"] {
+  color: #a5281b !important;
+}
+
+/* ---------- Botões ---------- */
+.adm .btn[disabled] {
+  opacity: 0.55;
+  cursor: progress;
+  transform: none;
+}
+
+.adm-largo {
+  width: 100%;
+}
+
+.adm-btn-sec {
+  background-color: transparent;
+  border: 1px solid rgba(29, 32, 38, 0.5);
+  color: var(--on-light);
+}
+
+.adm-btn-sec:hover {
+  background-color: var(--on-light);
+  color: var(--ivory);
+}
+
+.adm-btn-pequeno {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.8rem;
+}
+
+.adm-link {
+  padding: 0.3rem 0;
+  background: none;
+  font-size: 0.9rem;
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.adm-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.adm-perigo {
+  color: #a5281b;
+}
+
+#form-login .adm-link,
+#form-senha .adm-link {
+  display: block;
+  margin: 1rem auto 0;
+}
+
+/* ---------- Lista ---------- */
+.adm-lista {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.adm-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.2rem 1.4rem;
+}
+
+.adm-item h2 {
+  margin: 0.45rem 0 0.2rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: var(--on-light);
+}
+
+.adm-selo {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background-color: var(--ivory-2);
+  color: var(--on-light-soft);
+}
+
+.adm-selo[data-publicado="true"] {
+  background-color: rgba(79, 163, 107, 0.15);
+  color: #2d6b42;
+}
+
+.adm-data {
+  font-size: 0.85rem;
+  color: var(--on-light-soft);
+}
+
+.adm-item-acoes {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.adm-vazio {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--on-light-soft);
+  background-color: #fff;
+  border: 1px dashed rgba(29, 32, 38, 0.25);
+}
+
+/* ---------- Editor ---------- */
+.adm-status {
+  font-size: 0.88rem;
+  color: var(--on-light-soft);
+}
+
+.adm-status[data-alterado="true"] {
+  color: #8a4b08;
+}
+
+.adm-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  align-items: start;
+  gap: 1.8rem;
+}
+
+.adm-papel {
+  min-height: 75vh;
+  padding: clamp(1.2rem, 4vw, 3rem) clamp(1rem, 5vw, 4rem) 3rem;
+}
+
+.adm-titulo {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  padding: 0 !important;
+  overflow: hidden;
+  resize: none !important;
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.adm-titulo::placeholder {
+  color: rgba(29, 32, 38, 0.3);
+}
+
+/* Barra do editor acompanha a rolagem em textos longos */
+.adm-papel .ql-toolbar.ql-snow {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin: 0 -0.5rem 1.4rem;
+  padding: 0.55rem 0.5rem;
+  background-color: #fff;
+  border: none;
+  border-top: 1px solid var(--hairline-light);
+  border-bottom: 1px solid var(--hairline-light);
+}
+
+.adm-papel .ql-container.ql-snow {
+  border: none;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+/* Mesma tipografia da página publicada, para o editor mostrar o resultado */
+.adm-papel .ql-editor {
+  min-height: 55vh;
+  padding: 0;
+  line-height: 1.75;
+  color: #34373f;
+  overflow-wrap: break-word;
+}
+
+.adm-papel .ql-editor > * {
+  margin-bottom: 0.9rem;
+}
+
+.adm-papel .ql-editor.ql-blank::before {
+  left: 0;
+  right: 0;
+  font-style: italic;
+  color: rgba(29, 32, 38, 0.4);
+}
+
+.adm-papel .ql-editor h2,
+.adm-papel .ql-editor h3 {
+  font-family: var(--display);
+  color: var(--on-light);
+  line-height: 1.25;
+}
+
+.adm-papel .ql-editor h2 {
+  margin: 2.2rem 0 0.8rem;
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+}
+
+.adm-papel .ql-editor h3 {
+  margin: 1.8rem 0 0.6rem;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+}
+
+.adm-papel .ql-editor strong {
+  font-weight: 600;
+  color: var(--on-light);
+}
+
+.adm-papel .ql-editor a {
+  color: var(--gold-deep);
+}
+
+.adm-papel .ql-snow .ql-editor blockquote {
+  margin: 0.4rem 0 1rem;
+  padding: 0.2rem 0 0.2rem 1.5rem;
+  border-left: 2px solid var(--gold);
+  font-style: italic;
+  color: var(--on-light);
+}
+
+.adm-papel .ql-editor img {
+  margin: 1rem 0;
+  border: 1px solid var(--hairline-light);
+}
+
+/* Textos do Quill em português */
+.adm .ql-snow .ql-picker.ql-header {
+  width: 132px;
+}
+
+.adm .ql-snow .ql-picker.ql-header .ql-picker-label::before,
+.adm .ql-snow .ql-picker.ql-header .ql-picker-item::before {
+  content: "Texto normal";
+}
+
+.adm .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"]::before,
+.adm .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"]::before {
+  content: "Título";
+}
+
+.adm .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"]::before,
+.adm .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"]::before {
+  content: "Subtítulo";
+}
+
+.adm .ql-snow .ql-tooltip {
+  z-index: 10;
+}
+
+.adm .ql-snow .ql-tooltip::before {
+  content: "Abrir:";
+}
+
+.adm .ql-snow .ql-tooltip[data-mode="link"]::before {
+  content: "Endereço do link:";
+}
+
+.adm .ql-snow .ql-tooltip a.ql-action::after {
+  content: "Editar";
+}
+
+.adm .ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+  content: "Salvar";
+}
+
+.adm .ql-snow .ql-tooltip a.ql-remove::before {
+  content: "Remover";
+}
+
+.adm .ql-snow .ql-tooltip input[type="text"] {
+  width: 240px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Coluna lateral ---------- */
+.adm-lateral {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.adm-bloco {
+  padding: 1.3rem 1.3rem 0.4rem;
+}
+
+.adm-bloco h2 {
+  margin-bottom: 1rem;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.adm-acoes {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  padding-bottom: 1.2rem;
+}
+
+/* Imita o resultado do Google (fonte, cores e cortes de texto) */
+.adm-previa {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: 1.3rem;
+  padding: 0.9rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+}
+
+.adm-previa-url {
+  overflow: hidden;
+  font-size: 0.78rem;
+  color: #202124;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.adm-previa-titulo {
+  overflow: hidden;
+  font-size: 1.15rem;
+  line-height: 1.3;
+  color: #1a0dab;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.adm-previa-descricao {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #4d5156;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.adm-endereco {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--on-light-soft);
+}
+
+.adm .adm-endereco input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.adm-checklist {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.2rem 0 1.2rem;
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+.adm-checklist li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  color: var(--on-light-soft);
+}
+
+.adm-checklist li::before {
+  content: "○";
+  flex-shrink: 0;
+  width: 1em;
+  color: #b0aca2;
+}
+
+.adm-checklist li[data-ok="true"] {
+  color: var(--on-light);
+}
+
+.adm-checklist li[data-ok="true"]::before {
+  content: "✓";
+  font-weight: 700;
+  color: #2d6b42;
+}
+
+.adm-capa {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  margin-bottom: 0.8rem;
+  object-fit: cover;
+  border: 1px solid var(--hairline-light);
+}
+
+.adm-arquivo {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+}
+
+.adm-arquivo input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#capa-remover {
+  display: block;
+  margin: 0 auto 0.6rem;
+}
+
+.adm-bloco .adm-dica:last-child {
+  display: block;
+  margin-bottom: 1.1rem;
+}
+
+.adm-lembrete {
+  padding: 0 0.3rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--on-light-soft);
+}
+
+@media (max-width: 1000px) {
+
+  .adm-grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+
+  .adm-usuario #usuario-email {
+    display: none;
+  }
+
+  .adm-item-acoes {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

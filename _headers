@@ -15,6 +15,13 @@
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
 
+# Painel dos artigos: fora do Google e sempre na versão mais nova.
+# (As páginas /artigos/ vêm de functions/ e definem os próprios cabeçalhos —
+# este arquivo não vale para respostas de Functions.)
+/admin/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-cache
+
 # Assets são versionados por querystring (?v=) ou imutáveis por natureza.
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

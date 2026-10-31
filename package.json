@@ -5,8 +5,9 @@
   "private": true,
   "homepage": "https://luanamarinhoadvogada.com.br/",
   "scripts": {
-    "dev": "live-server --port=5173 --no-browser --watch=index.html,styles,scripts,assets,prisao-em-flagrante,audiencia-de-custodia,execucao-penal,tribunal-do-juri,habeas-corpus,sitemap.xml,robots.txt",
-    "start": "live-server --port=5173 --watch=index.html,styles,scripts,assets,prisao-em-flagrante,audiencia-de-custodia,execucao-penal,tribunal-do-juri,habeas-corpus,sitemap.xml,robots.txt",
+    "dev": "live-server --port=5173 --no-browser --watch=index.html,styles,scripts,assets,admin,prisao-em-flagrante,audiencia-de-custodia,execucao-penal,tribunal-do-juri,habeas-corpus,robots.txt",
+    "start": "live-server --port=5173 --watch=index.html,styles,scripts,assets,admin,prisao-em-flagrante,audiencia-de-custodia,execucao-penal,tribunal-do-juri,habeas-corpus,robots.txt",
+    "dev:pages": "npx --yes wrangler@4 pages dev . --port 8788",
     "images": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {

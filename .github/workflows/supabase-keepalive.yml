@@ -1,0 +1,30 @@
+# O plano gratuito do Supabase pausa o projeto depois de 7 dias sem uso —
+# e, pausado, os artigos saem do ar. Uma consulta leve a cada 3 dias evita isso.
+name: Manter Supabase ativo
+
+on:
+  schedule:
+    - cron: '17 12 */3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  consulta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Consultar a tabela de artigos
+        run: |
+          URL=$(sed -n "s/.*SUPABASE_URL = '\(.*\)'.*/\1/p" scripts/supabase-config.js)
+          KEY=$(sed -n "s/.*SUPABASE_KEY = '\(.*\)'.*/\1/p" scripts/supabase-config.js)
+          if echo "$URL" | grep -q 'SEU-PROJETO'; then
+            echo "Supabase ainda não configurado em scripts/supabase-config.js — nada a fazer."
+            exit 0
+          fi
+          curl --fail --silent --show-error --max-time 30 \
+            "$URL/rest/v1/artigos?select=id&limit=1" \
+            -H "apikey: $KEY" > /dev/null
+          echo "Supabase respondeu."

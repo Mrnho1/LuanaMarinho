@@ -4,4 +4,7 @@ Allow: /
 # Evita que os originais em alta resolução e arquivos de build sejam rastreados
 Disallow: /assets/_originals/
 
+# Painel de publicação dos artigos
+Disallow: /admin/
+
 Sitemap: https://luanamarinhoadvogada.com.br/sitemap.xml

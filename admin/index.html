@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel de artigos | Luana Marinho</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#12141a">
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@500;600;700&family=Jost:wght@300;400;500;600&display=swap">
+
+  <!-- Bibliotecas com versão fixa e hash de integridade: se o arquivo no CDN
+       for alterado, o navegador se recusa a carregá-lo. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+    integrity="sha384-ecIckRi4QlKYya/FQUbBUjS4qp65jF/J87Guw5uzTbO1C1Jfa/6kYmd6dXUF6D7i" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/style.css?v=8">
+  <link rel="stylesheet" href="/admin/admin.css?v=1">
+</head>
+
+<body class="adm">
+  <header class="adm-topo">
+    <a href="/" class="logo" aria-label="Ir para o site">
+      <img src="/assets/img/icone-dourado.png" alt="" width="46" height="36">
+      <span class="logo-text">Luana Marinho<small>Painel de artigos</small></span>
+    </a>
+    <div class="adm-usuario" id="usuario" hidden>
+      <span id="usuario-email"></span>
+      <button type="button" class="adm-link" id="trocar-senha">Trocar senha</button>
+      <button type="button" class="adm-link" id="sair">Sair</button>
+    </div>
+  </header>
+
+  <p class="adm-aviso" id="aviso" role="status" aria-live="polite" hidden></p>
+
+  <main class="adm-main">
+    <p class="adm-carregando" id="tela-carregando">Carregando…</p>
+
+    <!-- ===================== LOGIN ===================== -->
+    <section id="tela-login" class="adm-cartao adm-estreito" hidden>
+      <h1>Entrar</h1>
+      <p class="adm-ajuda">Área restrita para publicação de artigos no site.</p>
+      <form id="form-login" novalidate>
+        <label class="adm-campo">
+          <span>E-mail</span>
+          <input type="email" name="email" autocomplete="username" required>
+        </label>
+        <label class="adm-campo">
+          <span>Senha</span>
+          <input type="password" name="senha" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-primary adm-largo" type="submit">Entrar</button>
+        <button type="button" class="adm-link" id="esqueci">Esqueci minha senha</button>
+      </form>
+    </section>
+
+    <!-- ===================== NOVA SENHA ===================== -->
+    <section id="tela-senha" class="adm-cartao adm-estreito" hidden>
+      <h1>Nova senha</h1>
+      <p class="adm-ajuda">Use pelo menos 8 caracteres. Uma frase curta é fácil de lembrar e difícil de adivinhar.</p>
+      <form id="form-senha" novalidate>
+        <label class="adm-campo">
+          <span>Nova senha</span>
+          <input type="password" name="senha" autocomplete="new-password" minlength="8" required>
+        </label>
+        <label class="adm-campo">
+          <span>Repita a nova senha</span>
+          <input type="password" name="confirmacao" autocomplete="new-password" minlength="8" required>
+        </label>
+        <button class="btn btn-primary adm-largo" type="submit">Salvar senha</button>
+        <button type="button" class="adm-link" id="cancelar-senha">Cancelar</button>
+      </form>
+    </section>
+
+    <!-- ===================== LISTA ===================== -->
+    <section id="tela-lista" hidden>
+      <div class="adm-cabecalho">
+        <h1>Artigos</h1>
+        <button type="button" class="btn btn-primary" id="novo">Novo artigo</button>
+      </div>
+      <ul class="adm-lista" id="lista"></ul>
+    </section>
+
+    <!-- ===================== EDITOR ===================== -->
+    <section id="tela-editor" hidden>
+      <div class="adm-cabecalho">
+        <button type="button" class="adm-link" id="voltar">← Todos os artigos</button>
+        <span class="adm-status" id="status"></span>
+      </div>
+
+      <div class="adm-grade">
+        <div class="adm-papel">
+          <label class="adm-oculto" for="titulo">Título do artigo</label>
+          <textarea id="titulo" class="adm-titulo" rows="1" placeholder="Título do artigo"></textarea>
+          <div id="editor"></div>
+        </div>
+
+        <aside class="adm-lateral">
+          <div class="adm-bloco adm-acoes">
+            <button type="button" class="btn btn-primary adm-largo" id="publicar">Publicar</button>
+            <button type="button" class="btn adm-btn-sec adm-largo" id="salvar">Salvar rascunho</button>
+            <a class="adm-link" id="ver" target="_blank" rel="noopener" hidden>Ver no site ↗</a>
+            <button type="button" class="adm-link" id="despublicar" hidden>Tirar do site (voltar a rascunho)</button>
+            <button type="button" class="adm-link adm-perigo" id="excluir" hidden>Excluir artigo</button>
+          </div>
+
+          <div class="adm-bloco">
+            <h2>Como aparece no Google</h2>
+            <div class="adm-previa" aria-hidden="true">
+              <span class="adm-previa-url" id="previa-url"></span>
+              <span class="adm-previa-titulo" id="previa-titulo"></span>
+              <span class="adm-previa-descricao" id="previa-descricao"></span>
+            </div>
+
+            <label class="adm-campo">
+              <span>Descrição <small id="descricao-contador"></small></span>
+              <textarea id="descricao" rows="4" maxlength="300"
+                placeholder="Resumo de 1 ou 2 frases que convide a pessoa a clicar."></textarea>
+            </label>
+
+            <label class="adm-campo">
+              <span>Endereço do artigo</span>
+              <span class="adm-endereco">/artigos/<input id="slug" type="text" spellcheck="false" autocomplete="off">/</span>
+              <small class="adm-dica" id="slug-aviso" hidden>Este artigo já está publicado. Se mudar o endereço, os links que já apontam para ele (inclusive no Google) deixam de funcionar.</small>
+            </label>
+
+            <label class="adm-campo">
+              <span>Título no Google <em>(opcional)</em> <small id="titulo-seo-contador"></small></span>
+              <input id="titulo-seo" type="text" maxlength="120" autocomplete="off">
+              <small class="adm-dica">Se ficar vazio, usamos o título do artigo + “| Luana Marinho”.</small>
+            </label>
+          </div>
+
+          <div class="adm-bloco">
+            <h2>Palavra-chave</h2>
+            <label class="adm-campo">
+              <span>O que a pessoa digita no Google para achar este texto?</span>
+              <input id="palavra-chave" type="text" autocomplete="off" placeholder="ex.: prisão em flagrante">
+            </label>
+            <ul class="adm-checklist" id="checklist"></ul>
+          </div>
+
+          <div class="adm-bloco">
+            <h2>Imagem de capa</h2>
+            <img id="capa-previa" class="adm-capa" alt="" hidden>
+            <label class="btn adm-btn-sec adm-largo adm-arquivo">
+              <span id="capa-rotulo">Escolher imagem</span>
+              <input id="capa-arquivo" type="file" accept="image/*">
+            </label>
+            <button type="button" class="adm-link" id="capa-remover" hidden>Remover capa</button>
+            <label class="adm-campo">
+              <span>Descrição da imagem</span>
+              <input id="capa-alt" type="text" autocomplete="off" placeholder="ex.: Fachada do Fórum Criminal da Barra Funda">
+            </label>
+            <small class="adm-dica">A capa é ajustada para 1200×630, o formato usado pelo Google, WhatsApp e LinkedIn.</small>
+          </div>
+
+          <p class="adm-lembrete">
+            Lembrete (Provimento 205/2021 da OAB): conteúdo informativo é permitido; evite promessa de resultado,
+            menção a casos ou clientes e chamadas para contratação.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.3/dist/umd/supabase.js"
+    integrity="sha384-BWcjm9OdFth9TbhCxZPdm+gAOUMAzQy9nmTs12ioXdCcbVnJaPMn+fMUoQCLt60R" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"
+    integrity="sha384-utBUCeG4SYaCm4m7GQZYr8Hy8Fpy3V4KGjBZaf4WTKOcwhCYpt/0PfeEe3HNlwx8" crossorigin="anonymous"></script>
+  <script type="module" src="/admin/admin.js?v=1"></script>
+</body>
+
+</html>

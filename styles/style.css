@@ -74,6 +74,7 @@ button {
   /* Dourado */
   --gold: #b9963f;
   --gold-bright: #d8b65f;
+  --gold-deep: #7a5f1e; /* dourado para texto sobre marfim (contraste AA) */
   --hairline-dark: rgba(216, 182, 95, 0.22);
   --hairline-light: rgba(29, 32, 38, 0.14);
 
@@ -295,6 +296,7 @@ header {
   letter-spacing: 0.14em;
   color: var(--on-dark);
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .logo-text small {
@@ -321,6 +323,7 @@ header {
   text-transform: uppercase;
   color: var(--on-dark);
   padding: 0.3rem 0;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -1112,6 +1115,58 @@ footer {
 }
 
 /* ===================== RESPONSIVO ===================== */
+/* Menu da home: 7 itens + botão. Abaixo de 1366px os espaçamentos encolhem;
+   abaixo de 1180px nem assim cabem, e o menu vira o sanduíche. */
+@media (max-width: 1366px) {
+
+  .navbar,
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 1180px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0;
+    background-color: rgba(20, 22, 28, 0.98);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--hairline-dark);
+  }
+
+  .nav-links.nav-active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+  }
+}
+
 @media (max-width: 900px) {
 
   .nav-cta {
@@ -1178,41 +1233,7 @@ footer {
 
 @media (max-width: 768px) {
 
-  .menu-toggle {
-    display: flex;
-  }
-
   .logo-text {
-    font-size: 0.95rem;
-  }
-
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    gap: 0;
-    padding: 0.5rem 0;
-    background-color: rgba(20, 22, 28, 0.98);
-    -webkit-backdrop-filter: blur(12px);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--hairline-dark);
-  }
-
-  .nav-links.nav-active {
-    display: flex;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 1rem 0;
     font-size: 0.95rem;
   }
 
@@ -1413,4 +1434,298 @@ a.area-row:focus-visible {
 .related-list a:hover {
   color: var(--gold);
   border-bottom-color: var(--gold);
+}
+
+/* ===================== ARTIGOS ===================== */
+/* Item do menu da seção atual. Não usa .active porque o scrollspy do
+   main.js limpa essa classe ao rolar. */
+.nav-links a[aria-current] {
+  color: var(--gold-bright);
+}
+
+.nav-links a[aria-current]::after {
+  width: 100%;
+}
+
+.artigo-hero h1 {
+  max-width: 24ch;
+}
+
+.artigo-meta {
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  color: var(--on-dark-soft);
+}
+
+.artigo-meta a {
+  color: var(--gold-bright);
+}
+
+.artigo-meta a:hover {
+  text-decoration: underline;
+}
+
+.artigo-capa {
+  margin-bottom: 2.8rem;
+}
+
+.artigo-capa img {
+  width: 100%;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+  border: 1px solid var(--hairline-light);
+}
+
+/* Corpo do texto escrito no painel */
+.artigo-conteudo {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: #34373f;
+  overflow-wrap: break-word;
+}
+
+.artigo-conteudo > * {
+  margin-bottom: 1.15rem;
+}
+
+.artigo-conteudo h2,
+.artigo-conteudo h3 {
+  font-family: var(--display);
+  color: var(--on-light);
+  line-height: 1.25;
+}
+
+.artigo-conteudo h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  margin: 2.8rem 0 1rem;
+}
+
+.artigo-conteudo h3 {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  margin: 2.2rem 0 0.8rem;
+}
+
+.artigo-conteudo h4 {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--on-light);
+  margin: 2rem 0 0.6rem;
+}
+
+.artigo-conteudo > :first-child {
+  margin-top: 0;
+}
+
+.artigo-conteudo strong {
+  font-weight: 600;
+  color: var(--on-light);
+}
+
+.artigo-conteudo a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-decoration-color: rgba(185, 150, 63, 0.5);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.3s ease;
+}
+
+.artigo-conteudo a:hover {
+  text-decoration-color: currentColor;
+}
+
+.artigo-conteudo ul,
+.artigo-conteudo ol {
+  padding-left: 1.5rem;
+}
+
+.artigo-conteudo ul {
+  list-style: disc;
+}
+
+.artigo-conteudo ol {
+  list-style: decimal;
+}
+
+.artigo-conteudo li + li {
+  margin-top: 0.45rem;
+}
+
+.artigo-conteudo li::marker {
+  color: var(--gold);
+}
+
+.artigo-conteudo blockquote {
+  border-left: 2px solid var(--gold);
+  padding: 0.2rem 0 0.2rem 1.5rem;
+  font-style: italic;
+  color: var(--on-light);
+}
+
+.artigo-conteudo img {
+  margin: 2rem 0;
+  border: 1px solid var(--hairline-light);
+}
+
+.artigo-conteudo hr {
+  border: none;
+  border-top: 1px solid var(--hairline-light);
+  margin: 2.6rem 0;
+}
+
+/* Caixa da autora — autoria identificada pesa para conteúdo jurídico */
+.artigo-autora {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin: 3.5rem 0 3rem;
+  padding: 1.6rem;
+  border: 1px solid var(--hairline-light);
+  background-color: var(--ivory-2);
+}
+
+.artigo-autora img {
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.artigo-autora p {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--on-light-soft);
+}
+
+.artigo-autora strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--on-light);
+}
+
+/* Listagem */
+.artigos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 2rem;
+}
+
+.artigo-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #faf8f2;
+  border: 1px solid var(--hairline-light);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.artigo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 18px 40px rgba(20, 22, 28, 0.08);
+}
+
+.artigo-card:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.artigo-card-img {
+  aspect-ratio: 1200 / 630;
+  overflow: hidden;
+  background-color: var(--ink);
+}
+
+.artigo-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sem capa: a marca dourada centralizada sobre o fundo escuro */
+.artigo-card-img--marca {
+  display: grid;
+  place-items: center;
+}
+
+.artigo-card-img--marca img {
+  width: 64px;
+  height: auto;
+  opacity: 0.85;
+}
+
+.artigo-card-corpo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.7rem;
+  padding: 1.5rem 1.6rem 1.7rem;
+}
+
+.artigo-card time {
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.band-light .artigo-card h2 {
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+
+.artigo-card:hover h2 {
+  color: var(--gold-deep);
+}
+
+.artigo-card p {
+  flex: 1;
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--on-light-soft);
+}
+
+.artigo-card-mais {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+.artigos-vazio {
+  max-width: 52ch;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--on-light-soft);
+}
+
+.artigos-vazio a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+
+  .artigo-conteudo {
+    font-size: 1.12rem;
+  }
+
+  .artigo-autora {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
