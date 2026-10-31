@@ -58,11 +58,13 @@
 }
 
 /* ---------- Avisos ---------- */
+/* Abaixo do topo escuro e acima dele: o style.css do site põe o <header>
+   em z-index 1000, e a mensagem ficava escondida atrás. */
 .adm-aviso {
   position: fixed;
-  top: 1rem;
+  top: 5rem;
   left: 50%;
-  z-index: 100;
+  z-index: 1100;
   width: max-content;
   max-width: min(92vw, 560px);
   padding: 0.85rem 1.2rem;
@@ -179,6 +181,33 @@
 
 .adm textarea {
   resize: vertical;
+}
+
+/* Campo de senha com o botão "Mostrar" dentro */
+.adm-senha {
+  position: relative;
+  display: block;
+}
+
+.adm .adm-senha input {
+  padding-right: 5.5rem;
+}
+
+.adm-senha-ver {
+  position: absolute;
+  top: 50%;
+  right: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  transform: translateY(-50%);
+  background: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--gold-deep);
+}
+
+.adm-senha-ver:hover {
+  text-decoration: underline;
 }
 
 .adm-dica {

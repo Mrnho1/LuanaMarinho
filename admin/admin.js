@@ -61,6 +61,32 @@ const formatoHora = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: 
 const data = (iso) => formatoData.format(new Date(iso));
 const dataHora = (iso) => `${data(iso)} às ${formatoHora.format(new Date(iso))}`;
 
+/* Botão "Mostrar" ao lado de cada campo de senha. */
+for (const campo of document.querySelectorAll('input[type="password"]')) {
+  const caixa = document.createElement('span');
+  caixa.className = 'adm-senha';
+  campo.replaceWith(caixa);
+  const botao = document.createElement('button');
+  botao.type = 'button';
+  botao.className = 'adm-senha-ver';
+  botao.textContent = 'Mostrar';
+  botao.setAttribute('aria-label', 'Mostrar senha');
+  botao.addEventListener('click', () => {
+    const oculta = campo.type === 'password';
+    campo.type = oculta ? 'text' : 'password';
+    botao.textContent = oculta ? 'Ocultar' : 'Mostrar';
+    botao.setAttribute('aria-label', oculta ? 'Ocultar senha' : 'Mostrar senha');
+    campo.focus();
+  });
+  caixa.append(campo, botao);
+  // Ao enviar ou limpar o formulário, a senha volta a ficar oculta.
+  campo.form?.addEventListener('reset', () => {
+    campo.type = 'password';
+    botao.textContent = 'Mostrar';
+    botao.setAttribute('aria-label', 'Mostrar senha');
+  });
+}
+
 /* ===================== LOGIN E SESSÃO ===================== */
 
 sb.auth.onAuthStateChange((evento) => {
