@@ -77,6 +77,17 @@
   line-height: 1.45;
 }
 
+.adm-aviso-novo {
+  animation: adm-aviso-entra 0.35s ease;
+}
+
+@keyframes adm-aviso-entra {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -10px);
+  }
+}
+
 .adm-aviso[data-tipo="erro"] {
   border-left-color: #d0473a;
 }

@@ -33,6 +33,11 @@ function avisar(texto, tipo = 'info') {
   el.textContent = texto || '';
   el.dataset.tipo = tipo;
   el.hidden = !texto;
+  // Reinicia a animação de entrada: a mesma mensagem repetida (ex.: senha
+  // errada duas vezes) precisa parecer nova, senão não se nota a segunda.
+  el.classList.remove('adm-aviso-novo');
+  void el.offsetWidth;
+  el.classList.add('adm-aviso-novo');
   if (texto && tipo === 'ok') avisoTimer = setTimeout(() => (el.hidden = true), 5000);
 }
 
@@ -138,12 +143,14 @@ $('#form-login').addEventListener('submit', async (evento) => {
 
   const botao = form.querySelector('[type=submit]');
   botao.disabled = true;
+  botao.textContent = 'Entrando…';
+  avisar('');
   const { data: resposta, error } = await sb.auth.signInWithPassword({ email, password: form.senha.value });
   botao.disabled = false;
+  botao.textContent = 'Entrar';
   if (error) return avisar(traduzirErro(error), 'erro');
 
   form.reset();
-  avisar('');
   if (await entrar(resposta.user)) abrirLista();
 });
 
